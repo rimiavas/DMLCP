@@ -109,3 +109,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Jupyter & python caches
+*/.ipynb_checkpoints
+*/__pycache__
+
+# vim
+*.sw*
