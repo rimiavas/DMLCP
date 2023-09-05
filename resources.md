@@ -77,7 +77,7 @@ Have a look at the [technical resource page](python.setup/Technical-Resources.md
 ## Notable artworks
 
 - Pierre Huygues, [*UUmwelt*](https://www.serpentinegalleries.org/whats-on/pierre-huyghe-uumwelt/)
-- [Obvious](https://obvious-art.com/), first big auction sale (432,500$) of an AI artwork (GAN): [*Edmond de Belamy*](https://en.wikipedia.org/wiki/Edmond_de_Belamy)
+- First big auction sale (432,500$) of an AI artwork (GAN) in 2018: [*Edmond de Belamy*](https://en.wikipedia.org/wiki/Edmond_de_Belamy) by studio [Obvious](https://obvious-art.com/)
 
 ## Prizes, festivals, fairs, galleries
 
