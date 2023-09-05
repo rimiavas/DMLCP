@@ -39,8 +39,7 @@ Getting the App:
 - https://desktop.github.com/
 - Download the app
 - Install the app
-- Click “Sign into enterprise server" (git.arts.ac.uk)
-- Use UAL username and password
+- Make sure you're signed in, for instance with GitHub using your username and password
 - Browser opens -> Authorise -> Same username and password
 
 Cloning the Repo:
@@ -52,3 +51,28 @@ Cloning the Repo:
 Getting updates in the App:
 - Click Fetch origin
 - Click Pull origin
+
+You can also do that in the terminal:
+
+```bash
+$ git clone https://github.com/jchwenger/DMLAP
+$ cd DMLAP # voilà
+$ git:(main) # if you have oh my zsh, the branch will appear on the left in some form
+```
+
+### A note on the GIT workflow
+
+It is **highly** recommended, when working with a repo, that you create a separate *branch*, for instance `dev`, and do your work on this branch, commit things, etc. Then, you can pull new changes from the `upstream` branch (mine) without difficulty in your `master` branch. 
+
+In the terminal, right after you cloned:
+
+```bash
+$ git:(main) git checkout -b dev # creates a branch dev and checkout ('moves') into it
+$ git:(dev) 
+$ git:(dev) git checkout main # to come back (this will work *only* if your changes are committed or stashed)
+$ git:(main) # here you can pull
+```
+
+### Highly recommended: Git & GitHub for Poets
+
+Learn more about [Git and GitHub with Dan Shiffman](https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV).
