@@ -13,8 +13,8 @@ In this module, we introduce Google Colab but we also encourage you to have a wo
 ## Running Jupyter Notebooks
 
 Use the terminal/console and type:
-- ``conda activate dmlap`` (or the correct name of your environment if you did not call it dmlap)
-- ``jupyter notebook``
+- `conda activate dmlap` (or the correct name of your environment if you did not call it dmlap)
+- `jupyter notebook` or `jupyter lab`
 
 Then use the file explorer that opens in the browser to locate your iPython notebooks (explained below).
 
@@ -26,6 +26,8 @@ You have now launched the Jupyter Notebook programme from your terminal, and it 
 - Select the option "Upload" from the window that pops up or go to (File --> Upload notebook), then drag and drop in your (downloaded) iPython notebook
 
 It is as simple as that. You don't need to install anything to use Google Colab. When you start working with it, you will notice that it is quite useful to connect it to your Google Drive to allow it to read and write files instead of re-uploading your data every time you start a new colab session.
+
+### **!! NOTE: Never forget to check the _Runtime_ (CPU/GPU/TPU) in `Runtime → Runtime Type`**
 
 ## Getting the iPython code (.ipynb) from GitHub
 
