@@ -10,6 +10,7 @@ Convert this to HTML with https://markdowntohtml.com
 - [Getting started with p5js](https://p5js.org/get-started/)
 - [Getting started with ml5js](https://learn.ml5js.org/)
 - H. McCarthy, C. Reas and B. Fry, [*Getting started with p5js*](https://openlab.citytech.cuny.edu/emergingmedia/files/2019/03/Make_Getting-Started-with-p5dotjs.pdf) (also in the [library](https://librarysearch.gold.ac.uk/primo-explore/fulldisplay?docid=44GOL_SYMPHONY272547&vid=44GOL_VU1&search_scope=default_scope&tab=default_tab&lang=en_US&context=L))
+- Dan Shiffman's [Beginner's Guide to Machine Learning in JavaScript with ml5.js](https://www.youtube.com/watch?v=26uABexmOX4&list=PLRqwX-V7Uu6YPSwT06y_AEYTqIwbeam3y) playlist
 
 ## Python
 
@@ -73,10 +74,22 @@ Have a look at the [technical resource page](python.setup/Technical-Resources.md
 - [Kyle McDonald](https://kylemcdonald.net/) ([@kcimc](https://twitter.com/kcimc))
 - [Anna Ridler](https://annaridler.com/) ([@annaridler](https://twitter.com/annaridler))
 
-## Artists who used AI in som
+## Notable artworks
 
 - Pierre Huygues, [*UUmwelt*](https://www.serpentinegalleries.org/whats-on/pierre-huyghe-uumwelt/)
 - [Obvious](https://obvious-art.com/), first big auction sale (432,500$) of an AI artwork (GAN): [*Edmond de Belamy*](https://en.wikipedia.org/wiki/Edmond_de_Belamy)
+
+## Prizes, festivals, fairs, galleries
+
+- [The Lumen Prize](https://www.youtube.com/@thelumenprize229), [website](https://www.lumenprize.com/)
+- [Ars Electronica](https://www.youtube.com/@arselectronica), [website](https://ars.electronica.art/news/en/)
+- [CADAF, the Contemporary Digital Art Fairs](https://www.youtube.com/@cadaf79) and [New Art Academy](https://www.newartacademy.com/)
+- [bitforms](https://bitforms.art/) gallery
+- [arebyte](https://www.arebyte.com/) gallery
+- [feral file](https://feralfile.com/) gallery
+- [rhizome](https://rhizome.org/)
+- [Electronic Literature Organization](https://eliterature.org/)
+- [center for art and media karlsruhe](https://zkm.de/en/keyword/digital-art)
 
 ---
 
