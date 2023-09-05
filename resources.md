@@ -40,7 +40,7 @@ Have a look at the [technical resource page](python.setup/Technical-Resources.md
 
 - pharmapsychotic's huge [Tools and Resources for AI Art](https://pharmapsychotic.com/tools.html)
 - John O Whitaker's [AI ART](https://github.com/johnowhitaker/aiaiart) course & [DataScienceCastnet channel](https://www.youtube.com/@datasciencecastnet)
-- [Gene Kogan](https://www.youtube.com/@GeneKogan), founder of [ML 4 Artists (ml4a)](https://ml4a.net/)
+- [Gene Kogan's channel](https://www.youtube.com/@GeneKogan), and his [ML 4 Artists (ml4a)](https://ml4a.net/) website
 
 ## AI information, summaries, street talk
 
