@@ -26,7 +26,7 @@ Go to the [Downloads page](https://docs.conda.io/en/latest/miniconda.html) and g
 
 Is your Mac an M1 or M2?
 
-If so, get the correct installer: Miniconda3 macOS Apple M1 64-bit pkg 
+If so, use Miniforge instead of Miniconda! See the [other tutorial](Mac-M1-Troubleshooting.md).
 
 Older intel Macs should use: Miniconda3 macOS Intel x86 64-bit pkg
 
