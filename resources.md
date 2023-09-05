@@ -56,6 +56,7 @@ Have a look at the [technical resource page](python.setup/Technical-Resources.md
 ## AI ethics
 
 - [Emily M. Bender](https://faculty.washington.edu/ebender/) ([@emilymbender](https://twitter.com/emilymbender))
+- [Abeba Birhane](https://abebabirhane.com/) ([@Abebab](https://abebabirhane.com/)
 - [Joy Buolamwini](https://www.media.mit.edu/people/joyab/overview/), founder of the [Algorithmic Justice League](https://www.ajlunited.org)
 - Timnit Gebru, ([@timnitGebru](https://twitter.com/timnitGebru)), a good [talk](https://www.youtube.com/watch?v=b_--xrN3eso), see also: [Distributed AI Research Institute](https://www.dair-institute.org/)
 - [Peaks Krafft](https://www.arts.ac.uk/creative-computing-institute/people/peaks-krafft)
@@ -65,7 +66,7 @@ Have a look at the [technical resource page](python.setup/Technical-Resources.md
 ## AI artists
 
 - [Refik Anadol](https://refikanadol.com/) ([@refikanadol](https://twitter.com/refikanadol))
-- [Memo Atken](https://www.memo.tv/) ([@memotv](https://twitter.com/memotv))
+- [Memo Akten](https://www.memo.tv/) ([@memotv](https://twitter.com/memotv))
 - [Holly Herndon](https://www.hollyherndon.com/) ([@hollyherndon](https://twitter.com/hollyherndon))
 - [Mario Klingemann](https://quasimondo.com/) ([@quasimondo](https://twitter.com/quasimondo))
 - [Gene Kogan](https://genekogan.com/) ([@genkogan](https://twitter.com/genekogan))
