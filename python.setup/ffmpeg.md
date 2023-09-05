@@ -19,8 +19,3 @@ Useful practice:
 `foo-%03d.jpeg` specifies to use decimal numbers composed of 3 digits padded with zeros to express the sequence number. The images will be saved in the `folder`.
 
 This will extract 25 video frames per second from the video and will output them in files named foo-001.jpeg, foo-002.jpeg, etc. You can add `-s WxH` so that images are rescaled to fit new WxH values.
-
-
-
-
-
