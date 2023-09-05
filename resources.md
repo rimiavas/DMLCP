@@ -19,7 +19,7 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 ## Deep Learning
 
 - 3blue1Brown's unsurpassed [Neural Networks series](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi), (see also [his website](https://www.3blue1brown.com/lessons/neural-networks))
-- MIT's [Introduction to Deep Learning](https://www.youtube.com/watch?v=QDX-1M5Nj7s&list=PLTZ1bhP8GBuTCqeY19TxhHyrwFiot42_U), technical but the clearest out there
+- MIT's [Introduction to Deep Learning](https://www.youtube.com/watch?v=QDX-1M5Nj7s&list=PLTZ1bhP8GBuTCqeY19TxhHyrwFiot42_U), technical but the perhaps clearest out there
 - [fast.ai](https://www.fast.ai/) Practical Deep Learning for Coders [Part 1](https://www.youtube.com/watch?v=8SF_h3xF3cE&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU) and especially [Part 2](https://www.youtube.com/watch?v=_7rMfsA24Ls&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP), in PyTorch
 
 ---
@@ -60,6 +60,7 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 - [Gene Kogan](https://genekogan.com/) ([@genkogan](https://twitter.com/genekogan))
 - [Kyle McDonald](https://kylemcdonald.net/) ([@kcimc](https://twitter.com/kcimc))
 - [Anna Ridler](https://annaridler.com/) ([@annaridler](https://twitter.com/annaridler))
+- [Daniel Rozin](https://bitforms.art/artist/daniel-rozin/) ([@dannyrozin](https://www.instagram.com/dannyrozin/?hl=en)) (empty [website](https://www.smoothware.com/)?)
 
 ## Notable artworks
 
@@ -82,14 +83,11 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 
 ## Historical publications
 
-- [McCulloch and Pitts (1943) The Logical Calculus of the Ideas Immanent in Nervous Activity](https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf)
-  - The first computational model of artificial neurons
+- [McCulloch and Pitts (1943) The Logical Calculus of the Ideas Immanent in Nervous Activity](https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf), the first computational model of artificial neurons
 - [Turing (1950) COMPUTING MACHINERY AND INTELLIGENCE](https://www.cs.ox.ac.uk/activities/ieg/e-library/sources/t_article.pdf)
-- [Rumelhart, Hinton and Williams (1986) Learning representations by back-propagating errors](https://www.iro.umontreal.ca/~vincentp/ift3395/lectures/backprop_old.pdf)
-  - The paper that introduced [backpropagation](https://en.wikipedia.org/wiki/Backpropagation)
+- [Rumelhart, Hinton and Williams (1986) Learning representations by back-propagating errors](https://www.iro.umontreal.ca/~vincentp/ift3395/lectures/backprop_old.pdf), the paper that introduced [backpropagation](https://en.wikipedia.org/wiki/Backpropagation)
  
 ## Miscellaneous articles
 
-- Rodney Brooks - [The seven deadly sins of AI predictions](https://www.technologyreview.com/2017/10/06/241837/the-seven-deadly-sins-of-ai-predictions/)
-- Aaron Hertzmann - [Why computers do not make art](https://medium.com/@aaronhertzmann/why-computers-do-not-make-art-6c7f9bff6b04)
-- [Aaron Hertzmann's blog](https://aaronhertzmann.com)
+- Rodney Brooks, [The seven deadly sins of AI predictions](https://www.technologyreview.com/2017/10/06/241837/the-seven-deadly-sins-of-ai-predictions/)
+- Aaron Hertzmann, [Why computers do not make art](https://medium.com/@aaronhertzmann/why-computers-do-not-make-art-6c7f9bff6b04) (and his [blog](https://aaronhertzmann.com))
