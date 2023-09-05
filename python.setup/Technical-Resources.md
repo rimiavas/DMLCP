@@ -1,5 +1,20 @@
 # Technical Resources & Tutorials
 
+## Python
+
+- A nice and accessible [video tutorial](https://www.youtube.com/watch?v=rfscVS0vtbw) (there are loads and loads of introductions on YouTube, if you find one that suits you better, go for it!)
+- Many more [tutorials](https://wiki.python.org/moin/BeginnersGuide/Programmers)
+- A treasure trove of resources: [Real Python](https://realpython.com/)
+
+## Jupyter Notebooks & Google Colab
+
+- Super short [video introduction](https://www.youtube.com/watch?v=inN8seMm7UI)
+- A [tutorial](https://realpython.com/jupyter-notebook-introduction/)
+
+## Git, the Terminal
+
+- Dan Shiffman's [Git & GitHub for Poets](https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV) and [Workflow](https://www.youtube.com/watch?v=gJa6wri8YNQ&list=PLRqwX-V7Uu6Zu_uqEA6NqhLzKLACwU74X) series
+
 ## Run things in the cloud
 
 Note: as of mid-2023, there is **such** demand for GPUs that it is more difficult to rent GPUs than it used to be. Colab remains a stable option, for short jobs.

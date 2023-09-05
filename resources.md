@@ -12,22 +12,9 @@ Convert this to HTML with https://markdowntohtml.com
 - H. McCarthy, C. Reas and B. Fry, [*Getting started with p5js*](https://openlab.citytech.cuny.edu/emergingmedia/files/2019/03/Make_Getting-Started-with-p5dotjs.pdf) (also in the [library](https://librarysearch.gold.ac.uk/primo-explore/fulldisplay?docid=44GOL_SYMPHONY272547&vid=44GOL_VU1&search_scope=default_scope&tab=default_tab&lang=en_US&context=L))
 - Dan Shiffman's [Beginner's Guide to Machine Learning in JavaScript with ml5.js](https://www.youtube.com/watch?v=26uABexmOX4&list=PLRqwX-V7Uu6YPSwT06y_AEYTqIwbeam3y) playlist
 
-## Python
+For Python, Jupyter, Colab, and more, have a look at the [technical resource page](python.setup/Technical-Resources.md) as well.
 
-- A nice and accessible [video tutorial](https://www.youtube.com/watch?v=rfscVS0vtbw) (there are loads and loads of introductions on YouTube, if you find one that suits you better, go for it!)
-- Many more [tutorials](https://wiki.python.org/moin/BeginnersGuide/Programmers)
-- A treasure trove of resources: [Real Python](https://realpython.com/)
-
-## Jupyter Notebooks & Google Colab
-
-- Super short [video introduction](https://www.youtube.com/watch?v=inN8seMm7UI)
-- A [tutorial](https://realpython.com/jupyter-notebook-introduction/)
-
-## Git, the Terminal
-
-- Dan Shiffman's [Git & GitHub for Poets](https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV) and [Workflow](https://www.youtube.com/watch?v=gJa6wri8YNQ&list=PLRqwX-V7Uu6Zu_uqEA6NqhLzKLACwU74X) series
-
-Have a look at the [technical resource page](python.setup/Technical-Resources.md) as well.
+---
 
 ## Deep Learning
 
