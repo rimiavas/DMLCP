@@ -31,7 +31,7 @@ It is as simple as that. You don't need to install anything to use Google Colab.
 
 ## Getting the iPython code (.ipynb) from GitHub
 
-The iPython code for this module will be found in [this repository](https://github.com/colormotor/DMLAP) on [GitHub](https://github.com).
+The iPython code for this module will be found in [this repository](https://github.com/jchwenger/DMLAP) on [GitHub](https://github.com).
 
 The easiest way to get the code everytime we update the repository is to use the Github App.
 
@@ -44,7 +44,7 @@ Getting the App:
 - Browser opens -> Authorise -> Same username and password
 
 Cloning the Repo:
-- Go to [repo](https://github.com/colormotor/DMLAP)
+- Go to [repo](https://github.com/jchwenger/DMLAP)
 - Click Clone or Download
 - Open in App
 - Choose an install location on your computer (by default this is a Github folder in your Documents)
