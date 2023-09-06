@@ -14,6 +14,8 @@
 ## Git, the Terminal
 
 - Dan Shiffman's [Git & GitHub for Poets](https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV) and [Workflow](https://www.youtube.com/watch?v=gJa6wri8YNQ&list=PLRqwX-V7Uu6Zu_uqEA6NqhLzKLACwU74X) series
+- Chris Alexiuk's [git good](https://www.youtube.com/watch?v=L8uAV6oh3Rg&list=PLiI2-gm0pf8cvd2Ra9RH7FrvOcyz7s2de) series
+- NYU [Git tutorial](https://nyu-dataservices.gitlab.io/rdm-instruction/intro-to-git-and-github.html)
 
 ## Run things in the cloud
 
