@@ -29,6 +29,8 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 - pharmapsychotic's huge [Tools and Resources for AI Art](https://pharmapsychotic.com/tools.html)
 - John O Whitaker's [AI ART](https://github.com/johnowhitaker/aiaiart) course & [DataScienceCastnet channel](https://www.youtube.com/@datasciencecastnet)
 - [Gene Kogan's channel](https://www.youtube.com/@GeneKogan), and his [ML 4 Artists (ml4a)](https://ml4a.net/) website
+- [Artificial Images's channel](https://www.youtube.com/@ArtificialImages)
+- Valerio Velardo's [The Sound of AI channel](https://www.youtube.com/@ValerioVelardoTheSoundofAI/playlists) (music & AI resources)
 
 ## AI information, summaries, street talk
 
@@ -55,12 +57,17 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 
 - [Refik Anadol](https://refikanadol.com/) ([@refikanadol](https://twitter.com/refikanadol))
 - [Memo Akten](https://www.memo.tv/) ([@memotv](https://twitter.com/memotv))
+- [Sofia Crespo](https://sofiacrespo.com/) ([@soficrespo91](https://twitter.com/soficrespo91))
+- [Scott Eaton](https://www.scott-eaton.com/) ([@_ScottEaton_](https://twitter.com/_ScottEaton_))
 - [Holly Herndon](https://www.hollyherndon.com/) ([@hollyherndon](https://twitter.com/hollyherndon))
 - [Mario Klingemann](https://quasimondo.com/) ([@quasimondo](https://twitter.com/quasimondo))
 - [Gene Kogan](https://genekogan.com/) ([@genkogan](https://twitter.com/genekogan))
 - [Kyle McDonald](https://kylemcdonald.net/) ([@kcimc](https://twitter.com/kcimc))
+- [Allison Parrish](https://www.decontextualize.com/) ([@aparrish](https://friend.camp/@aparrish))
 - [Anna Ridler](https://annaridler.com/) ([@annaridler](https://twitter.com/annaridler))
 - [Daniel Rozin](https://bitforms.art/artist/daniel-rozin/) ([@dannyrozin](https://www.instagram.com/dannyrozin/?hl=en)) (empty [website](https://www.smoothware.com/)?)
+- [Helena Sarin](https://www.neuralbricolage.com/) ([@NeuralBricolage](https://twitter.com/NeuralBricolage))
+- [Alexander Schubert](https://www.alexanderschubert.net/) ([@alexanderschubert_composer](https://www.instagram.com/alexanderschubert_composer))
 
 ## Notable artworks
 
@@ -78,6 +85,7 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 - [rhizome](https://rhizome.org/)
 - [Electronic Literature Organization](https://eliterature.org/)
 - [center for art and media karlsruhe](https://zkm.de/en/keyword/digital-art)
+- Nvidia's [AI Art Gallery](https://www.nvidia.com/en-us/research/ai-art-gallery/)
 
 ---
 
