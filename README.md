@@ -1,1 +1,1 @@
-# IS71074B: Data and Machine Learning for Artistic Practice
+# IS53055B: Data and Machine Learning for Artistic Practice (UG)
