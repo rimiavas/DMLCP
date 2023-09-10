@@ -37,6 +37,7 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 - [Yannic Kilcher](https://www.youtube.com/@YannicKilcher)
 - [AI Coffee Break with Letitia](https://www.youtube.com/@AICoffeeBreak)
 - [Two Minutes Papers](https://www.youtube.com/@TwoMinutePapers)
+- [Nicholas Renotte](https://www.youtube.com/@NicholasRenotte)
 
 ## Prompting for images
 
