@@ -32,11 +32,13 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 - [Artificial Images's channel](https://www.youtube.com/@ArtificialImages)
 - Valerio Velardo's [The Sound of AI channel](https://www.youtube.com/@ValerioVelardoTheSoundofAI/playlists) (music & AI resources)
 
-## AI information, summaries, street talk
+## AI tutorials, summaries, street talk
 
 - [Yannic Kilcher](https://www.youtube.com/@YannicKilcher)
 - [AI Coffee Break with Letitia](https://www.youtube.com/@AICoffeeBreak)
 - [Two Minutes Papers](https://www.youtube.com/@TwoMinutePapers)
+- [deeplizard](https://www.youtube.com/@deeplizard)
+- [Siraj Raval](https://www.youtube.com/@SirajRaval)
 - [Nicholas Renotte](https://www.youtube.com/@NicholasRenotte)
 
 ## Prompting for images
@@ -98,5 +100,6 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
  
 ## Miscellaneous articles
 
+- Jürgen Schmidhuber, [Annotated History of Modern AI and Deep Learning](https://people.idsia.ch/~juergen/deep-learning-history.html)
 - Rodney Brooks, [The seven deadly sins of AI predictions](https://www.technologyreview.com/2017/10/06/241837/the-seven-deadly-sins-of-ai-predictions/)
 - Aaron Hertzmann, [Why computers do not make art](https://medium.com/@aaronhertzmann/why-computers-do-not-make-art-6c7f9bff6b04) (and his [blog](https://aaronhertzmann.com))
