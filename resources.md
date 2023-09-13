@@ -92,14 +92,15 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 
 ---
 
-## Historical publications
+## History & landmark publications
 
+- Jürgen Schmidhuber, [Annotated History of Modern AI and Deep Learning](https://people.idsia.ch/~juergen/deep-learning-history.html)
 - [McCulloch and Pitts (1943) The Logical Calculus of the Ideas Immanent in Nervous Activity](https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf), the first computational model of artificial neurons
 - [Turing (1950) COMPUTING MACHINERY AND INTELLIGENCE](https://www.cs.ox.ac.uk/activities/ieg/e-library/sources/t_article.pdf)
 - [Rumelhart, Hinton and Williams (1986) Learning representations by back-propagating errors](https://www.iro.umontreal.ca/~vincentp/ift3395/lectures/backprop_old.pdf), the paper that introduced [backpropagation](https://en.wikipedia.org/wiki/Backpropagation)
  
-## Miscellaneous articles
+## Ethics, art, and more
 
-- Jürgen Schmidhuber, [Annotated History of Modern AI and Deep Learning](https://people.idsia.ch/~juergen/deep-learning-history.html)
+- Kate Crawford and Trevor Paglen, [Excavating AI: The Politics of Images in Machine Learning Training Sets](https://excavating.ai/)
 - Rodney Brooks, [The seven deadly sins of AI predictions](https://www.technologyreview.com/2017/10/06/241837/the-seven-deadly-sins-of-ai-predictions/)
 - Aaron Hertzmann, [Why computers do not make art](https://medium.com/@aaronhertzmann/why-computers-do-not-make-art-6c7f9bff6b04) (and his [blog](https://aaronhertzmann.com))
