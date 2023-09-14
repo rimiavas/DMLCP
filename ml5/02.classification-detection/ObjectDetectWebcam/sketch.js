@@ -1,78 +1,104 @@
 /*
   Data and machine learning for artistic practice (DMLAP)
-  Week 3
-  
-  Object detector via webcam,
-  
-  Note, this uses ml5.js 0.5.0 not 0.6.0, 0.6.0 reacts differently.
+
+  Object detection with a Webcam,
 */
 
-let video;
-let detector;
-let detections = [];
+let video,
+    detector,
+    detections = [];
 
 function preload() {
-  // load our object library cocossd - you could use 'YOLO'
-  detector = ml5.objectDetector('cocossd');
+  detector = ml5.objectDetector('cocossd'); // Load our object dection model `cocossd` – you could use 'yolo'
 }
 
 function setup() {
   createCanvas(640, 480);
-  
-  // load our webcam feed. When the video is ready the videoReady function will be called
-  video = createCapture(VIDEO, videoReady);
+
+  video = createCapture(VIDEO, videoReady); // Load our webcam feed, when the video is ready the videoReady callback will be called
   video.size(640, 480);
   video.hide();
 }
 
 function videoReady(stream) {
-  // we now know the video is ready, so we'll start the detection.
-  
-  // start our detector, pass in the callback function 'detected'
-  // this will be called when a detection is performed
-  detector.detect(video, detected);
+  // We now know the video is ready, so we'll start the detection.
+  detector.detect(video, gotResults); // Start our detector, pass in the callback function 'gotResults' called once the detection is done
 }
-
 
 function draw() {
   background(0);
-  
-  // draw webcam frame
+
+  // Draw webcam frame
   image(video, 0, 0);
 
-  // loop through all our detections and draw them
+  // IDEA: instead of only using the model as intended (image detection), how about
+  //       using, say, only the labels, or only the bounding boxes, as material for
+  //       some generative art where we would not necessarily even see the video feed?
+  // IDEA: note that the labels could be used poetically: for instance, you could choose
+  //       a large text file (containing one or more novels, poetry, other kinds  of
+  //       text), load it in memory, and then *search* through it for a sentence con-
+  //       taining the label of the object being detected?
+  // IDEA: something that I've seen implemented somewhere, is the idea of using an ex-
+  //       ternal API (an image search engine) to look for images of what is being de-
+  //       tected (person, apple, etc.), pull that from the internet, and display the
+  //       random image on top of the video feed in the bounding box of the detected
+  //       object?
+
+  // Loop through all our detections
   for (let object of detections) {
-    // we use lerp to color the border somewhere between red and green based on the confidence of the prediction
+
+    // We use lerp to color the border somewhere between red and green based on the confidence of the prediction
     stroke(lerpColor(color(255,0,0), color(0, 255, 0), object.confidence));
     strokeWeight(3);
     noFill();
-    // and draw a rectangle around the recognized object
+
+    // Draw a rectangle around the recognized object
     rect(object.x, object.y, object.width, object.height);
-    // In this commented version, we use the normalised values, these represent the percentage across the screen as a value between 0 and 1 
-    // - so we multiply these out by the width and height of the canvas.
-    // this will be useful in case we want to rescale the video 
-    // rect(object.normalized.x * video.width, 
-    //      object.normalized.y * video.height, 
-    //      object.normalized.width * video.width, 
+    // In this commented version, we use the normalised values, these represent
+    // the percentage across the screen as a value between 0 and 1 – so we
+    // multiply these out by the width and height of the canvas. this will be
+    // useful in case we want to rescale the video:
+    // rect(object.normalized.x * video.width,
+    //      object.normalized.y * video.height,
+    //      object.normalized.width * video.width,
     //      object.normalized.height * video.height);
 
     // Draw the label
-    noStroke();
     fill(255);
+    noStroke();
     textSize(24);
     text(object.label, object.x + 10, object.y + 24);
   }
 }
 
-function detected(error, results) {
-  if (error) {
-    console.log("We had an error with the detection -> "+error);
+function gotResults(err, results) {
+  if (err) {
+    console.log("We had an error with the detection:", err);
   }
-  
-  // remember our detections so that we can draw them in draw()
+
+  // Remember our detections so that we can draw them in draw()
   detections = results;
-  
-  // By default, no new detection will be done so we need to restart the detection 
-  // again (as we did in videoReady(...)) to keep detecting each frame
-  detector.detect(video, detected);
+
+  // Recursion! <3 By default, no new detection will be done so we need to
+  // restart the detection again (as we did in videoReady(...)) to keep
+  // detecting each frame:
+  detector.detect(video, gotResults);
 }
+
+// IDEA: (advanced) One could imagine modifying this sketch to use a 'friend' network to
+//       counteract the other 'external' (or 'enemy') network, in order to prevent the
+//       'enemy' network from detecting a person? One way of going about this could be the
+//       following:
+//       - instantiate *two*, rather than just one network;
+//       - use the 'friend' network to do detection on the video feed
+//       - if the 'friend' network detects one or more 'person' in the feed (you need to
+//         study the labels, and the structure of the 'results' array to do that), modify
+//         the current video feed by, for instance, drawing a full box where the person
+//         is (using the detection's x/y/width/height), or some other strategy to change
+//         that area of the image)
+//       - then instead of feeding the normal video to the 'enemy' network, feed that
+//         modified feed, and see if you are able to prevent the 'enemy' network from
+//         seeing anybody?
+//       It could be nice to have two videos next to each other, one where one sees the
+//       'friend' network detecting the person, and the other with the modified video feed
+//       and the 'enemy' network no longer detecting anybody.
