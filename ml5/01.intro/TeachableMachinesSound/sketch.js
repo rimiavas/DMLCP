@@ -1,10 +1,12 @@
 /*
   Data and machine learning for artistic practice (DMLAP)
-  Week 1
-  
-  Image classifier via models trained with Teachable Machines
+
+  Sound classifier via models trained with Teachable Machines
   from https://github.com/ml5js/Intro-ML-Arts-IMA-F21
   & https://editor.p5js.org/ima_ml/sketches/xcdqphiVj
+
+  Note: when I tested it, the Teachable Machines interface didn't
+  work so well with Firefox (OK with Chrome).
 */
 
 let classifier;
@@ -13,7 +15,19 @@ let classifier;
 let label = "listening";
 
 // Teachable Machine model URL:
-const soundModelURL = 'https://teachablemachine.withgoogle.com/models/h3p9R41J/';
+const soundModelURL = 'https://teachablemachine.withgoogle.com/models/h3p9R41J/'; // hand clap
+const instructions = 'Clap your hands!';
+
+// Other model
+// const soundModelURL = 'https://teachablemachine.withgoogle.com/models/ueOfZRiLS/'; // 'blah', 'ouh', 'OK'
+// const instructions = 'Say "blah", "ouh", or "OK"';
+
+// IDEA: this would allow you to learn commands that activate certain actions or effects in
+//       the sketch, for instance, the creation of certain shapes?
+// IDEA: it is possible to upload samples to Teachable Machines, perhaps you could try this
+//       with songs from two different bands, and see if it recognises a song it was not trained
+//       on? (You might hit a wall there, especially if you don't have a lot of training data,
+//       but it would be quite interesting to try it out!)
 
 function preload() {
   // Load the model
@@ -22,7 +36,7 @@ function preload() {
 
 function setup() {
   createCanvas(320, 240);
-  createP("Clap your hands!");
+  createP(instructions);
   // Start classifying
   // The sound model will continuously listen to the microphone
   classifier.classify(gotResult);
