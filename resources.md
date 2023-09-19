@@ -21,6 +21,7 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 - 3blue1Brown's unsurpassed [Neural Networks series](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi), (see also [his website](https://www.3blue1brown.com/lessons/neural-networks))
 - MIT's [Introduction to Deep Learning](https://www.youtube.com/watch?v=QDX-1M5Nj7s&list=PLTZ1bhP8GBuTCqeY19TxhHyrwFiot42_U), technical but the perhaps clearest out there
 - [fast.ai](https://www.fast.ai/) Practical Deep Learning for Coders [Part 1](https://www.youtube.com/watch?v=8SF_h3xF3cE&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU) and especially [Part 2](https://www.youtube.com/watch?v=_7rMfsA24Ls&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP), in PyTorch
+- [Machine Learning Glossary](https://developers.google.com/machine-learning/glossary), Google for Developers
 
 ---
 
@@ -101,6 +102,7 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
  
 ## Ethics, art, and more
 
-- Kate Crawford and Trevor Paglen, [Excavating AI: The Politics of Images in Machine Learning Training Sets](https://excavating.ai/)
+- Memo Atken, [A journey through multiple dimensions and transformations in SPACE](https://medium.com/artists-and-machine-intelligence/a-journey-through-multiple-dimensions-and-transformations-in-space-the-final-frontier-d8435d81ca51)
 - Rodney Brooks, [The seven deadly sins of AI predictions](https://www.technologyreview.com/2017/10/06/241837/the-seven-deadly-sins-of-ai-predictions/)
+- Kate Crawford and Trevor Paglen, [Excavating AI: The Politics of Images in Machine Learning Training Sets](https://excavating.ai/)
 - Aaron Hertzmann, [Why computers do not make art](https://medium.com/@aaronhertzmann/why-computers-do-not-make-art-6c7f9bff6b04) (and his [blog](https://aaronhertzmann.com))
