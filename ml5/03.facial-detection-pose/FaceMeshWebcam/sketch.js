@@ -6,9 +6,9 @@
 */
 
 
-let facemesh;
-let video;
-let predictions = [];
+let facemesh,
+    video,
+    predictions = [];
 
 function setup() {
   createCanvas(640, 480);
@@ -46,7 +46,7 @@ function modelReady() {
 function draw() {
   image(video, 0, 0, width, height);
 
-  drawKeypoints(); // We call function to draw all keypoints
+  drawKeypoints(); // We call our function to draw all keypoints
                    // IDEA: like in previous sketches, there is no obligation to display the video,
                    //       and you could for instance imagine a blank canvas where a few points
                    //       from the face are used to draw vanishing circles, using the same logic
