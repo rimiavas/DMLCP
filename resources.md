@@ -33,6 +33,11 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 - [Artificial Images's channel](https://www.youtube.com/@ArtificialImages)
 - Valerio Velardo's [The Sound of AI channel](https://www.youtube.com/@ValerioVelardoTheSoundofAI/playlists) (music & AI resources)
 
+## GANs
+
+- [Awesome Pretrained StyleGAN2](https://github.com/justinpinkney/awesome-pretrained-stylegan2)
+- [The GAN Zoo](https://github.com/hindupuravinash/the-gan-zoo)
+
 ## AI tutorials, summaries, street talk
 
 - [Yannic Kilcher](https://www.youtube.com/@YannicKilcher)
