@@ -2,6 +2,10 @@
   Data and machine learning for artistic practice (DMLAP)
 
   Object detection on a static image
+
+  Original sketch: https://editor.p5js.org/ml5/sketches/ObjectDetector_COCOSSD_single_image
+  Reference here: https://learn.ml5js.org/#/reference/object-detector
+  And other examples: https://learn.ml5js.org/#/reference/object-detector?id=examples
 */
 
 let detector,

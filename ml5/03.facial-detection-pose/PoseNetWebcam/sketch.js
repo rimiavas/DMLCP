@@ -1,13 +1,14 @@
 /*
-  Data and machine learning for creative practice
+  Data and machine learning for creative practice (DMLAP)
 
-  Pose Estimation with PoseNet in ml5.js
-  https://learn.ml5js.org/#/reference/posenet
+  Pose Estimation with PoseNet
 
   Originally from: The Coding Train / Daniel Shiffman
   https://thecodingtrain.com/Courses/ml5-beginners-guide/7.1-posenet.html
   https://youtu.be/OIo-DIOkNVg
   https://editor.p5js.org/codingtrain/sketches/ULA97pJXR
+
+  Reference here: https://learn.ml5js.org/#/reference/posenet
 */
 
 let video,

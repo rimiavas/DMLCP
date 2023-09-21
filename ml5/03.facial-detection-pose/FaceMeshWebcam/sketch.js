@@ -1,8 +1,11 @@
 /*
-  Data and machine learning for artistic practice
-  Adapated from here: https://learn.ml5js.org/#/reference/facemesh
+  Data and machine learning for artistic practice (DMLAP)
 
   Face mesh with a webcam
+
+  Original sketch: https://editor.p5js.org/ml5/sketches/Facemesh_Webcam
+  Reference here: https://learn.ml5js.org/#/reference/facemesh
+  And other examples: https://learn.ml5js.org/#/reference/facemesh?id=examples
 */
 
 

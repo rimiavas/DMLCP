@@ -1,51 +1,53 @@
 /*
+  Data and machine learning for artistic practice (DMLAP)
+  Regression example 2
 
-In this code we create colour markers on the screen, each time saving their
-coordinates and r,g,b values and providing them to our neural network.
-e.g. nnAddData(inputs, output); in mousePressed();
+  In this code we create colour markers on the screen, each time saving their
+  coordinates and r,g,b values and providing them to our neural network.
+  e.g. nnAddData(inputs, output); in mousePressed();
 
-Once we have enough points we call nnTrain(); this trains the neural network
+  Once we have enough points we call nnTrain(); this trains the neural network
 
-The demo will show a grid with all the colors predicted at each position.
+  The demo will show a grid with all the colors predicted at each position.
 
-Instructions:
-- Click to place a point,
-- Press 1 to 3 to change the colour of the points
-- Press 't' to train the model
+  Instructions:
+  - Click to place a point,
+  - Press 1 to 3 to change the colour of the points
+  - Press 't' to train the model
 
-All information to customise your neural network and training can be found here:
-https://learn.ml5js.org/#/reference/neural-network
+  All information to customise your neural network and training can be found here:
+  https://learn.ml5js.org/#/reference/neural-network
 
-IDEA:
-- Can you find patterns where the neural net fails to capture the data?
-- Maybe you would like to develop this sketch to allow you to explore the different parameters
-  of your network and of training more easily? One way of doing that would be to work with a
-  GUI library like https://github.com/bitcraftlab/p5.gui
-- In this vein, one could imagine implementing ways to:
-  - Show which class is currently selected (1, 2 or 3) somewhere on the canvas
-  - Reset the neural network when pressing a key
-  - Reset the datapoints when pressing another key
-  - Show the prediction for the pixel under the mouse (draw an ellipse with the predicted color?)
-  - If you wanted to save/load your data points, here's how to do it:
+  IDEA:
+  - Can you find patterns where the neural net fails to capture the data?
+  - Maybe you would like to develop this sketch to allow you to explore the different parameters
+    of your network and of training more easily? One way of doing that would be to work with a
+    GUI library like https://github.com/bitcraftlab/p5.gui
+  - In this vein, one could imagine implementing ways to:
+    - Show which class is currently selected (1, 2 or 3) somewhere on the canvas
+    - Reset the neural network when pressing a key
+    - Reset the datapoints when pressing another key
+    - Show the prediction for the pixel under the mouse (draw an ellipse with the predicted color?)
+    - If you wanted to save/load your data points, here's how to do it:
 
-    // This will actually download a file.
-    function saveData(path){
-      saveJSON(data_points, './data.json');
-    }
-
-    // Loading and saving
-    function loadData(path){
-      function loaded(json){
-        // Note: you might want to recreate your nn here (or not)
-        data_points = json;              // Load existing data if any
-        for (const data of data_points){ // if we have points add them
-          let inputs = [data.x, data.y];
-          let outputs = [data.r, data.g, data.b];
-          nn.addData(inputs, outputs); // this adds the data to the neural network
-        }
+      // This will actually download a file.
+      function saveData(path){
+        saveJSON(data_points, './data.json');
       }
-      loadJSON(path, loaded);
-    }
+
+      // Loading and saving
+      function loadData(path){
+        function loaded(json){
+          // Note: you might want to recreate your nn here (or not)
+          data_points = json;              // Load existing data if any
+          for (const data of data_points){ // if we have points add them
+            let inputs = [data.x, data.y];
+            let outputs = [data.r, data.g, data.b];
+            nn.addData(inputs, outputs); // this adds the data to the neural network
+          }
+        }
+        loadJSON(path, loaded);
+      }
 
 */
 

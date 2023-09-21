@@ -1,9 +1,13 @@
 /*
-  Data and machine learning for artistic practice
-  Adapted from Joe McAlister, originally from
-  here: https://learn.ml5js.org/#/reference/face-api
+  Data and machine learning for artistic practice (DMLAP)
 
   Facial detection on a webcam
+
+  Adapted from Joe McAlister's version
+
+  Original sketch: https://editor.p5js.org/ml5/sketches/FaceApi_Video_Landmarks
+  Reference here: https://learn.ml5js.org/#/reference/face-api
+  And other examples: https://learn.ml5js.org/#/reference/face-api?id=examples
 */
 
 let faceapi,

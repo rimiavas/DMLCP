@@ -1,32 +1,34 @@
 /*
+  Data and machine learning for artistic practice (DMLAP)
+  Regression example 1
 
-In this code we create colour markers on the screen, each time saving their
-coordinates and r,g,b values and providing them to our neural network.
-e.g. nn.addData(inputs, output); in mousePressed();
+  In this code we create colour markers on the screen, each time saving their
+  coordinates and r,g,b values and providing them to our neural network.
+  e.g. nn.addData(inputs, output); in mousePressed();
 
-Once we have enough points we call nn.train(); this trains the neural network
+  Once we have enough points we call nn.train(); this trains the neural network
 
-After it has trained we ask the neural network to predict the colour for the
-mouse coordinates (reflected in the square)
+  After it has trained we ask the neural network to predict the colour for the
+  mouse coordinates (reflected in the square)
 
-Instructions:
-- Click to place a point,
-- Press 1 to 3 to change the colour of the points
-- Press 't' to train the model
+  Instructions:
+  - Click to place a point,
+  - Press 1 to 3 to change the colour of the points
+  - Press 't' to train the model
 
-IDEA: An experiment that could help you gain some practice with this NN system
-      could be to try and implement two variants of this sketch: one that takes
-      *one* input instead of two (for instance only the x or the y). You would
-      need to make changes when you define your network, and whenever an input
-      is fed into your nn. You could also try and imagine what system could take
-      *three* inputs instead of two?
-IDEA: Similarly, nothing stops you from making the nn predict only one number,
-      instead of three. Instead of having three different colours as we have here,
-      you could define three different radius sizes for ellipses. You select which
-      one using the numbers as above, and when you click to create data, you create
-      an ellipse with that radius at that point. Then, you train your neural net to
-      predict just this number, the radius, and when the model is trained, you could
-      draw an ellipse with the predicted radius at that spot.
+  IDEA: An experiment that could help you gain some practice with this NN system
+        could be to try and implement two variants of this sketch: one that takes
+        *one* input instead of two (for instance only the x or the y). You would
+        need to make changes when you define your network, and whenever an input
+        is fed into your nn. You could also try and imagine what system could take
+        *three* inputs instead of two?
+  IDEA: Similarly, nothing stops you from making the nn predict only one number,
+        instead of three. Instead of having three different colours as we have here,
+        you could define three different radius sizes for ellipses. You select which
+        one using the numbers as above, and when you click to create data, you create
+        an ellipse with that radius at that point. Then, you train your neural net to
+        predict just this number, the radius, and when the model is trained, you could
+        draw an ellipse with the predicted radius at that spot.
 */
 
 let nn,

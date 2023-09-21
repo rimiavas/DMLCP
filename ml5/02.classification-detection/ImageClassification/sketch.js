@@ -2,6 +2,10 @@
   Data and machine learning for artistic practice (DMLAP)
 
   Image classification demo
+
+  Original sketch: https://editor.p5js.org/ml5/sketches/ImageClassification
+  Reference here: https://learn.ml5js.org/#/reference/image-classifier
+  And other examples: https://learn.ml5js.org/#/reference/image-classifier?id=examples
 */
 
 let classifier,

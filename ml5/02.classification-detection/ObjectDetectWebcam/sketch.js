@@ -1,7 +1,11 @@
 /*
   Data and machine learning for artistic practice (DMLAP)
 
-  Object detection with a Webcam,
+  Object detection with a Webcam
+
+  Original sketch: https://editor.p5js.org/ml5/sketches/ObjectDetector_COCOSSD_Video
+  Reference here: https://learn.ml5js.org/#/reference/object-detector
+  And other examples: https://learn.ml5js.org/#/reference/object-detector?id=examples
 */
 
 let video,

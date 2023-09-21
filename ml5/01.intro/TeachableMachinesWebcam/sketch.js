@@ -1,7 +1,6 @@
 /*
   Data and machine learning for artistic practice (DMLAP)
-  Week 1
-  
+
   Image classifier via models trained with Teachable Machines
   adapted from https://github.com/ml5js/Intro-ML-Arts-IMA-F21
   & Joe McAlister's course
@@ -75,7 +74,7 @@ function gotResult(error, results) {
   // The results are in an array ordered by confidence.
   // console.log(results[0]);
   label = results[0].label;           // IDEA: can you modify this sketch to display not just the first
-  confidence = results[0].confidence; // label (results[0]), but all of them? You would need to change 
+  confidence = results[0].confidence; // label (results[0]), but all of them? You would need to change
                                       // the code that displays the label as a text in `draw()`. One way
                                       // of doing this would be to use `results` as a global!
 
