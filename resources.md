@@ -1,9 +1,7 @@
 # S71074B: Data and Machine Learning for Artistic Practice  
 # Resources
 
-<!---
-Convert this to HTML with https://markdowntohtml.com
--->
+Setup instructions are in [setup page](setup.md), and have a look at the [technical resource page](technical-resources.md) as well.
 
 ## Creative Coding (P5/ML5)
 
@@ -11,8 +9,6 @@ Convert this to HTML with https://markdowntohtml.com
 - [Getting started with ml5js](https://learn.ml5js.org/)
 - H. McCarthy, C. Reas and B. Fry, [*Getting started with p5js*](https://openlab.citytech.cuny.edu/emergingmedia/files/2019/03/Make_Getting-Started-with-p5dotjs.pdf) (also in the [library](https://librarysearch.gold.ac.uk/primo-explore/fulldisplay?docid=44GOL_SYMPHONY272547&vid=44GOL_VU1&search_scope=default_scope&tab=default_tab&lang=en_US&context=L))
 - Dan Shiffman's [Beginner's Guide to Machine Learning in JavaScript with ml5.js](https://www.youtube.com/watch?v=26uABexmOX4&list=PLRqwX-V7Uu6YPSwT06y_AEYTqIwbeam3y) playlist
-
-For Python, Jupyter, Colab, and more, have a look at the [technical resource page](python.setup/Technical-Resources.md) as well.
 
 ---
 
@@ -33,10 +29,13 @@ For Python, Jupyter, Colab, and more, have a look at the [technical resource pag
 - [Artificial Images's channel](https://www.youtube.com/@ArtificialImages)
 - Valerio Velardo's [The Sound of AI channel](https://www.youtube.com/@ValerioVelardoTheSoundofAI/playlists) (music & AI resources)
 
-## GANs
+## GANs & pix2pix
 
 - [Awesome Pretrained StyleGAN2](https://github.com/justinpinkney/awesome-pretrained-stylegan2)
 - [The GAN Zoo](https://github.com/hindupuravinash/the-gan-zoo)
+- [GANs — What and Where?](https://medium.com/thecyphy/gans-what-and-where-b377672283c5)
+- [Reimagining History in Color with Pix2Pix as an Assistant](https://towardsdatascience.com/reimagining-history-in-color-with-pix2pix-as-an-assistant-23d6e4a64e75)
+- [This New AI Tool Makes Great Art. It Could Also Make Great Fake News.](https://nymag.com/intelligencer/2017/03/pix2pix-cat-drawing-tool-is-ai-at-its-best.html)
 
 ## AI tutorials, summaries, street talk
 
