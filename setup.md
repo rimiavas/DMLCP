@@ -249,7 +249,7 @@ conda install pytorch::pytorch torchvision torchaudio -c pytorch
 ## 5. Other dependencies
 
 The following are instructions that should install all the required dependencies for the DMLAP course. 
-This assumes you followed the Python and Conda setup instructions and installed Tensorflow by following [Installing Tensorflow.ipynb](Installing Tensorflow.ipynb). Repeating these steps if all or some of the dependencies are already satisfied should cause no problem.
+This assumes you followed the Python and Conda setup instructions and installed Tensorflow by following the instructions above. Repeating these steps if all or some of the dependencies are already satisfied should cause no problem.
 
 Now first make sure your environment is active `conda activate dmlap`, then:
 
@@ -272,7 +272,7 @@ conda install -c conda-forge \
 
 ### Canvas
 
-If you have the `canvas.py` file in the same folder as a notebook importing it, everything will work. If you want to install [py5canvas](https://github.com/colormotor/py5canvas) on your system, open a terminal and write:
+If you have the `canvas.py` file in the same folder as a notebook importing it (and you've installed `pycairo`), everything will work. If you want to install [py5canvas](https://github.com/colormotor/py5canvas) on your system, open a terminal and write:
 
 ```
 git clone https://github.com/colormotor/py5canvas.git
