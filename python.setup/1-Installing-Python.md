@@ -41,7 +41,7 @@ If you don't want to have the `(base)` environment automatically activated, run 
 conda config --set auto_activate_base false
 ```
 
-## 2.1 Environments (Conda) <a name="conda"></a>
+## 2.1 Environments (Conda)
 
 A [conda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html) is a directory that contains a specific collection of conda packages that you have installed. This allows you to work cleanly on your different projects that may require different versions of libraries or Python itself. You can easily activate or deactivate environments, which is how you switch between them. 
 
@@ -116,7 +116,7 @@ $ conda remove --n myenv --all
 - [Getting Started with Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html)
 - [Conda Cheatsheet](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html)
 
-## 2.2 Environments (Pip) <a name="pip"></a>
+## 2.2 Environments (Pip)
 
 Pip is Python's package manager (like `npm` for JavaScript)
 
@@ -164,7 +164,7 @@ Both create environments, however pip works *project-wise*, whereas conda works 
 
 Often, what you want to do is create a conda environment, then use `pip` to install things quickly (and if everything is messed up, you can just remove the env entirely and start from scratch).
 
-## 3. Jupyter & Google Colab <a name="jupyter-colab"></a>
+## 3. Jupyter & Google Colab
 
 The [Jupyter Notebook/Lab](https://jupyter.org) is a web interface around [IPython](https://ipython.org/) (an improved interactive Python interpreter) for creating and sharing computational documents. Note that this works for other languages as well, such as[JavaScript](https://github.com/n-riesco/ijavascript).
 
@@ -198,7 +198,7 @@ drive.mount('/content/drive/')
 
 ### **!! NOTE: Never forget to check the _Runtime_ (CPU/GPU/TPU) in `Runtime → Runtime Type`**
 
-## 4. ML Software <a name="ml"></a>
+## 4. ML Software
 
 ### Tensorflow/Keras
 
@@ -246,7 +246,44 @@ That's usually super straightforward. First, as always, `conda activate dmlap`. 
 conda install pytorch::pytorch torchvision torchaudio -c pytorch
 ```
 
-## 5. Git <a name="git"></a>
+## 5. Other dependencies
+
+The following are instructions that should install all the required dependencies for the DMLAP course. 
+This assumes you followed the Python and Conda setup instructions and installed Tensorflow by following [Installing Tensorflow.ipynb](Installing Tensorflow.ipynb). Repeating these steps if all or some of the dependencies are already satisfied should cause no problem.
+
+Now first make sure your environment is active `conda activate dmlap`, then:
+
+```bash
+conda install -c conda-forge \
+    jupyter \
+    numpy \
+    matplotlib \
+    pycairo \
+    opencv \
+    scikit-image \
+    dlib \
+    mlxtend \
+    pyglet \
+    beautifulsoup4 \
+    selenium
+```
+
+#### Note! That you may not need all of them. One good habit to gain is not to freak out when seeing an error saying a package isn't present, and install it when you need it.
+
+### Canvas
+
+If you have the `canvas.py` file in the same folder as a notebook importing it, everything will work. If you want to install [py5canvas](https://github.com/colormotor/py5canvas) on your system, open a terminal and write:
+
+```
+git clone https://github.com/colormotor/py5canvas.git
+cd py5canvas
+pip install -e .
+```
+
+(See [here](https://stackoverflow.com/a/59562571)). To update py5canvas to the latest version, navigate to the `py5canvas` directory in the terminal (using `cd`) and then:  `git pull`.
+
+
+## 6. Git
 
 A great way to get the code everytime the repository is updated is to use the Github App (but the Terminal is nice, too). It's also a wonderful tool for your projects and for collaborations, even if learning it well takes some investment.
 
@@ -285,7 +322,7 @@ $ git:(main) # here you can pull
 
 #### Highly recommended: [Dan Shiffman's Git and GitHub for Poets](https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV)
 
-## 5. Terminal things 💀💝 <a name="terminal"></a>
+## 7. Terminal things 💀💝
 
 ### Mac Users: Install Brew
 
@@ -308,7 +345,7 @@ The Z Shell and [Oh My ZSh](https://ohmyz.sh/) (a wrapper around the former, wit
 
 It's nice. Do it. 💖
 
-## 6. ffmpeg tricks <a name="ffmpeg"></a>
+## 8. ffmpeg tricks
 
 Install ffmpeg with [conda](https://anaconda.org/conda-forge/ffmpeg):
 
