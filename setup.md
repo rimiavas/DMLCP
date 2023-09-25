@@ -248,24 +248,29 @@ conda install pytorch::pytorch torchvision torchaudio -c pytorch
 
 ## 5. Other dependencies
 
-The following are instructions that should install all the required dependencies for the DMLAP course. 
-This assumes you followed the Python and Conda setup instructions and installed Tensorflow by following the instructions above. Repeating these steps if all or some of the dependencies are already satisfied should cause no problem.
+Here are instructions to install the other required dependencies for the DMLAP course. This assumes you followed the Python and Conda setup instructions and installed Tensorflow by following the instructions above. Repeating these steps if all or some of the dependencies are already satisfied should cause no problem.
 
-Now first make sure your environment is active `conda activate dmlap`, then:
+I personally recommend installing conda (or pip) packages one by one rather than in a bulk, as in my experience conda often hangs or takes *ages* to resolve the environment (longer than if you install things one by one).
 
+Other rule of thumb: try conda first (almost everything is available through the `conda-forge` channel, a Google search will tell you that), then pip. However, if you knwo what you will be using your environment for (only one specific project/task), then creating the env, with pip inside it, and using pip, can be quicker.
+
+Now first make sure your environment is active `conda activate dmlap`, then you can use `conda install -c conda-forge` to install the following packages:
+
+- essentials (`numpy` comes with TensorFlow)
 ```bash
-conda install -c conda-forge \
-    jupyter \
-    numpy \
-    matplotlib \
-    pycairo \
-    opencv \
-    scikit-image \
-    dlib \
-    mlxtend \
-    pyglet \
-    beautifulsoup4 \
-    selenium
+    jupyter matplotlib
+```
+- required by canvas:
+```bash
+    pycairo
+```
+-  image manipulation libraries
+```bash
+    opencv scikit-image dlib mlxtend pyglet
+```
+- for the scraping notebooks:
+```bash
+    beautifulsoup4 selenium
 ```
 
 #### Note! That you may not need all of them. One good habit to gain is not to freak out when seeing an error saying a package isn't present, and install it when you need it.
