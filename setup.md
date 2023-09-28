@@ -258,7 +258,7 @@ Now first make sure your environment is active `conda activate dmlap`, then you 
 
 - essentials (`numpy` comes with TensorFlow)
 ```bash
-    jupyter matplotlib
+    jupyter matplotlib pillow
 ```
 - required by canvas:
 ```bash
@@ -266,7 +266,11 @@ Now first make sure your environment is active `conda activate dmlap`, then you 
 ```
 -  image manipulation libraries
 ```bash
-    opencv scikit-image dlib mlxtend pyglet
+    opencv scikit-image dlib mlxtend
+```
+- for `Py5Canvas` you also need pyglet:
+```bash
+pip install pyglet
 ```
 - for the scraping notebooks:
 ```bash
