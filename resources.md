@@ -34,6 +34,8 @@ Setup instructions are in [setup page](setup.md), and have a look at the [techni
 - [Awesome Pretrained StyleGAN2](https://github.com/justinpinkney/awesome-pretrained-stylegan2)
 - [The GAN Zoo](https://github.com/hindupuravinash/the-gan-zoo)
 - [GANs — What and Where?](https://medium.com/thecyphy/gans-what-and-where-b377672283c5)
+- [gans-awesome-applications](https://github.com/nashory/gans-awesome-applications)
+- [lightweight-gan repo](https://github.com/lucidrains/lightweight-gan) by lucidrains / Phil Wang
 - [Reimagining History in Color with Pix2Pix as an Assistant](https://towardsdatascience.com/reimagining-history-in-color-with-pix2pix-as-an-assistant-23d6e4a64e75)
 - [This New AI Tool Makes Great Art. It Could Also Make Great Fake News.](https://nymag.com/intelligencer/2017/03/pix2pix-cat-drawing-tool-is-ai-at-its-best.html)
 
