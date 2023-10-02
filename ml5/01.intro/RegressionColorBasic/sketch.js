@@ -148,7 +148,7 @@ function nnPredict(input) {
   if (Array.isArray(input[0])){
     // multiple predictions
     return res.map(element => element.map(v => v.value));
-  }else{
+  } else {
     // make one prediction
     return res.map(v => v.value);
   }
