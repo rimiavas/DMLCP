@@ -39,7 +39,7 @@ Setup instructions are in [setup page](setup.md), and have a look at the [techni
 - [Reimagining History in Color with Pix2Pix as an Assistant](https://towardsdatascience.com/reimagining-history-in-color-with-pix2pix-as-an-assistant-23d6e4a64e75)
 - [This New AI Tool Makes Great Art. It Could Also Make Great Fake News.](https://nymag.com/intelligencer/2017/03/pix2pix-cat-drawing-tool-is-ai-at-its-best.html)
 
-## AI tutorials, summaries, street talk
+## AI video tutorials, summaries, street talk
 
 - [Yannic Kilcher](https://www.youtube.com/@YannicKilcher)
 - [AI Coffee Break with Letitia](https://www.youtube.com/@AICoffeeBreak)
@@ -47,6 +47,7 @@ Setup instructions are in [setup page](setup.md), and have a look at the [techni
 - [deeplizard](https://www.youtube.com/@deeplizard)
 - [Siraj Raval](https://www.youtube.com/@SirajRaval)
 - [Nicholas Renotte](https://www.youtube.com/@NicholasRenotte)
+- [Aleksa Gordić, The AI Epiphany](https://www.youtube.com/@TheAIEpiphany)
 
 ## Prompting for images
 
