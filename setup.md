@@ -268,6 +268,10 @@ Now first make sure your environment is active `conda activate dmlap`, then you 
 ```bash
     opencv scikit-image dlib mlxtend
 ```
+- for `scikit-image`, use the Anaconda channel:
+```bash
+     conda install -c anaconda scikit-image 
+```
 - for `Py5Canvas` you also need pyglet:
 ```bash
 pip install pyglet
