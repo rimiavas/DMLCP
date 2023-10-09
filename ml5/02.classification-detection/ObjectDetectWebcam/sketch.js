@@ -75,6 +75,18 @@ function draw() {
   }
 }
 
+// we can use mouseClicked to
+function mouseClicked() {
+  if (detector && video) {
+    detector.detect(video) // the model returns a Promise, see: https://www.youtube.com/playlist?list=PLRqwX-V7Uu6bKLPQvPRNNE65kBL62mVfx
+      .then((res) => {
+        console.log(res); // one detection
+      });
+  } else {
+    console.log("Model or video not ready yet...");
+  }
+}
+
 function gotResults(err, results) {
   if (err) {
     console.log("We had an error with the detection:", err);
