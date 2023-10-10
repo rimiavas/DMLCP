@@ -17,7 +17,7 @@ let classifier,
 function preload() {
   classifier = ml5.imageClassifier("MobileNet"); // load in our classifier from the internet, downloading the model if need be
                                                  // (by default the model returns the top 3 predictions, for more pass the option
-                                                 // {topk: 5}, or any number up to 1000, as a second argument!
+                                                 // {topk: 5}, or any number up to 1000, as a second argument!)
                                                  // See: https://learn.ml5js.org/#/reference/object-detector?id=initialize
 
   img = loadImage("images/labrador.jpg");        // load our dog image; try the australian-labradoodle-guide.jpg, does it work well?
