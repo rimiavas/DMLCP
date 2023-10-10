@@ -266,7 +266,7 @@ Now first make sure your environment is active `conda activate dmlap`, then you 
 ```
 -  image manipulation libraries
 ```bash
-    opencv scikit-image dlib mlxtend
+    opencv
 ```
 - for `scikit-image`, use the Anaconda channel:
 ```bash
