@@ -264,7 +264,7 @@ Now first make sure your environment is active `conda activate dmlap`, then you 
 ```bash
     pycairo
 ```
--  image manipulation libraries
+-  image manipulation library
 ```bash
     opencv
 ```
@@ -279,6 +279,11 @@ pip install pyglet
 - for the scraping notebooks:
 ```bash
     beautifulsoup4 selenium
+```
+-  for creating gifs in the DCGAN notebooks
+```bash
+    imageio
+```
 ```
 
 #### Note! That you may not need all of them. One good habit to gain is not to freak out when seeing an error saying a package isn't present, and install it when you need it.
@@ -355,6 +360,8 @@ It's nice. Do it. 💖
 ### Bash users: Install the Z shell & Oh My ZSH!
 
 The Z Shell and [Oh My ZSh](https://ohmyz.sh/) (a wrapper around the former, with lots of functionalities) are super nice and make life much easier on the terminal.
+
+Bash (& Zsh) keyboard shortcuts for [PC/Linux](https://gist.github.com/tuxfight3r/60051ac67c5f0445efee), [MacOS](https://gist.github.com/simonsmith/c725d03d5bc5c3898e6a) & [Z shell tutorial](https://github.com/hmml/awesome-zsh/blob/master/README.md).
 
 It's nice. Do it. 💖
 
