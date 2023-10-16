@@ -90,13 +90,15 @@ function drawPose() {
     let b = skeleton[i][1];
     strokeWeight(2);
     stroke(255);
-    line(a.position.x, a.position.y,b.position.x,b.position.y);
+    line(a.position.x, a.position.y, b.position.x, b.position.y);
   }
+
   // IDEA: here the skeleton (lines) does not include the head... Perhaps you could
   //       work with the points of the head as well?
   // IDEA: going further with this, you have no obligation to work with the entire
   //       skeleton, and perhaps you might want to use only the two wrists, or the
   //       two knees, or less obvious combinations (eye and hip?, wrist and knee?)
+
 }
 
 // A click of the mouse logs the pose to the console, have a look at the object!

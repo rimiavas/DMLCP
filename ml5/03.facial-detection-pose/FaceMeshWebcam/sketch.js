@@ -32,7 +32,7 @@ function setup() {
     if (!hasLogged) {
       console.log("The predictions object:");
       console.log(preds);
-      console.log("The list of 'annotations' in `predictions[0].annotations` (accessible as a property, and containing an array of points in that part of the face:");
+      console.log("The list of 'annotations' in `predictions[0].annotations` (accessible as a property, and containing an array of points in that part of the face:)");
       console.log(Object.keys(preds[0].annotations));
       hasLogged = true;
     }
