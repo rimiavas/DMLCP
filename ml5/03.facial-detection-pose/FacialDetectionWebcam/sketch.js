@@ -73,7 +73,7 @@ function gotResults(err, result) {
 
   detections = result;        // If it gets here we are okay, so store results in the detections variable.
 
-  if (!hasLogged && detections.length > 0) { // Only log once!
+  if (!hasLogged && detections.length > 0) {           // Only log once!
     console.log("The predictions object:");
     console.log(result);      // This is an object – have a look at it in the console!
     hasLogged = true;
