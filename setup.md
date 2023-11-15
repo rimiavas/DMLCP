@@ -143,6 +143,8 @@ rm -rf .env # inside `my-project``, simply delete the folder with env files
 
 ### **!! NOTE: When you run python3 -m venv, it will create an environment with the same version of Python as the one used when invoking the command! To use another version, you need to have it installed, then use python3.11 -m venv...**
 
+A nice way to work with various versions of Python outside conda (to work with pip and venv) is to install [pyenv](https://github.com/pyenv/pyenv), which allows you to select and install the python version you like without endangering your system's Python (see Rachele Guzzon's nice [Notion page](https://rachypan.notion.site/Creating-a-PIP-environment-for-Apple-silicon-MAC-without-GPU-acceleration-3a808e6c2690472aa73d94572ed123ea) installing all dependencies only with pip)!.
+
 ## 2.3 Conda vs Pip: What is the difference?
 
 You might often come across the commands `pip install` and `conda install` when installing packages.
@@ -238,12 +240,41 @@ Inside it, install:
 
 See [here](https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706) for a test example after the install.
 
-### PyTorch
+### PyTorch (+ Huggingface/Gradio)
 
-That's usually super straightforward. First, as always, `conda activate dmlap`. Then use the appropriate option on [this page](https://pytorch.org/get-started/locally/), for instance on Mac:
+### **!! NOTE: more often than not, because of updates, and the low-level CUDA libraries, having both TF and PyTorch in the same environment break things! For simplicity, start a new environment for this** 
+
+For the part of the course where we look at the Huggingface library, which has TF and JAX APIs, but was first conceived with PyTorch in mind, I advise creating a new environment (which works nicely for Gradio as well):
+
+```bash
+conda create -n dmlap.hub python
+conda activate dmlap.hub
+which pip # should give you a location within your anaconda/miniconda/minitorch folder
+```
+
+That's usually super straightforward. Then use the appropriate option on [this page](https://pytorch.org/get-started/locally/), for instance on Mac:
 
 ```bash
 conda install pytorch::pytorch torchvision torchaudio -c pytorch
+```
+
+Then, you could install things with conda or pip:
+
+```bash
+conda install jupyter matplotlib # and other things as you need
+```
+
+Huggingface [recommends pip for their installation](https://huggingface.co/docs/transformers/installation)
+
+```bash
+# all the Huggingface things
+pip install --upgrade transformers diffusers datasets accelerate
+```
+
+And [so does Gradio](https://www.gradio.app/guides/quickstart):
+
+```bash
+pip install gradio
 ```
 
 ## 5. Other dependencies
