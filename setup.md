@@ -143,7 +143,7 @@ rm -rf .env # inside `my-project``, simply delete the folder with env files
 
 ### **!! NOTE: When you run python3 -m venv, it will create an environment with the same version of Python as the one used when invoking the command! To use another version, you need to have it installed, then use python3.11 -m venv...**
 
-A nice way to work with various versions of Python outside conda (to work with pip and venv) is to install [pyenv](https://github.com/pyenv/pyenv), which allows you to select and install the python version you like without endangering your system's Python (see Rachele Guzzon's nice [Notion page](https://rachypan.notion.site/Creating-a-PIP-environment-for-Apple-silicon-MAC-without-GPU-acceleration-3a808e6c2690472aa73d94572ed123ea) installing all dependencies only with pip)!.
+A nice way to work with various versions of Python outside conda (to work with pip and venv) is to install [pyenv](https://github.com/pyenv/pyenv), which allows you to select and install the python version you like without endangering your system's Python (see Rachele Guzzon's nice [Notion page](https://rachypan.notion.site/Creating-a-PIP-environment-for-Apple-silicon-MAC-without-GPU-acceleration-3a808e6c2690472aa73d94572ed123ea) installing all dependencies only with pip)!
 
 ## 2.3 Conda vs Pip: What is the difference?
 
@@ -247,8 +247,8 @@ See [here](https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e
 For the part of the course where we look at the Huggingface library, which has TF and JAX APIs, but was first conceived with PyTorch in mind, I advise creating a new environment (which works nicely for Gradio as well):
 
 ```bash
-conda create -n dmlap.hub python
-conda activate dmlap.hub
+conda create -n dmlap.hug python
+conda activate dmlap.hug
 which pip # should give you a location within your anaconda/miniconda/minitorch folder
 ```
 
