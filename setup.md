@@ -369,6 +369,19 @@ $ git:(dev) git checkout main # to come back (this will work *only* if your chan
 $ git:(main) # here you can pull
 ```
 
+#### A note on the Huggingface workflow
+
+When working with [Huggingface Spaces](https://huggingface.co/spaces), if you want to work with your code locally, you will need to work with Git in the same way as with GitHub, which means:
+
+- you need to log into your computer using the `huggingface_hub` CLI utility, and use your [personal token](https://huggingface.co/settings/tokens) (in the environment where you installed `transformers`, the utility should already be installed. After that, in a terminal, do:
+  ```bash
+  python -m pip install huggingface_hub # this should tell you it's already installed
+  huggingface-cli login # this will ask for your token, found on your profile under settings > tokens
+  ```
+- you may need to save your ssh public key to your Huggingface account, and create one if you haven't already (this allows an utility like Git to send the public key to say "hey, it's me", and be recognised as such, like a password), see [this tutorial](https://huggingface.co/docs/hub/security-git-ssh).
+
+Once this is done, you can push to your space from your machine using git commands.
+
 #### Highly recommended: [Dan Shiffman's Git and GitHub for Poets](https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV)
 
 ## 7. Terminal things 💀💝
