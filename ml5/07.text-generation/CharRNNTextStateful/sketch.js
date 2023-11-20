@@ -118,7 +118,7 @@ async function predict() {
 // IDEA: just like in the interactive example, here one might modify the code
 //       to allow the text box not just to be the beginning, but also to allow
 //       the user to inject code within the text? Then you would need to feed
-//       the content of the text box into the net, before allowing for more 
+//       the content of the text box into the net, before allowing for more
 //       generation
 
 // IDEA: in this sketch, the text is stored in HTML, but you could also use the
