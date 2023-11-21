@@ -244,19 +244,15 @@ See [here](https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e
 
 ### **!! NOTE: more often than not, because of updates, and the low-level CUDA libraries, having both TF and PyTorch in the same environment break things! For simplicity, start a new environment for this** 
 
-For the part of the course where we look at the Huggingface library, which has TF and JAX APIs, but was first conceived with PyTorch in mind, I advise creating a new environment (which works nicely for Gradio as well):
+For the part of the course where we look at the Huggingface library, which has TF and JAX APIs, but was first conceived with PyTorch in mind, I advise creating a new environment (which works nicely for Gradio as well!). By creating the environment and specifying PyTorch directly and the channel, you can avoid some errors later due to, among other things, the Python version used (as well as using just `pip` on MacOS inside the environment, which shouldn't create difficulties and for some reason does):
 
 ```bash
-conda create -n dmlap.hug python
+conda create -n dmlap.hug python pytorch::pytorch torchvision torchaudio -c pytorch # create env + get pytorch
 conda activate dmlap.hug
 which pip # should give you a location within your anaconda/miniconda/minitorch folder
 ```
 
-That's usually super straightforward. Then use the appropriate option on [this page](https://pytorch.org/get-started/locally/), for instance on Mac:
-
-```bash
-conda install pytorch::pytorch torchvision torchaudio -c pytorch
-```
+Note that in my experience installing PyTorch is usually super straightforward, far easier than TensorFlow. Normally you can use the appropriate option on [this page](https://pytorch.org/get-started/locally/).
 
 Then, you could install things with conda or pip:
 
