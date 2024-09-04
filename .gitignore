@@ -116,3 +116,7 @@ dist
 
 # vim
 *.sw*
+
+# Python env folder
+env
+venv
