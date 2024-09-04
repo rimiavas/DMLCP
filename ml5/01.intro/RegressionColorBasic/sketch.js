@@ -52,7 +52,7 @@ function setup() {
   // For each example, the network has two inputs [x, y] (the mouse position)
   // and three outputs [r, g, b] (the corresponding color)
   // (Here we use the default config. To add more, look here under 'regression':
-  // https://learn.ml5js.org/#/reference/neural-network?id=defining-custom-layers)
+  // https://archive-docs.ml5js.org/#/reference/neural-network?id=defining-custom-layers)
   nn = ml5.neuralNetwork({
     inputs: 2,          // two inputs: x and y
     outputs: 3,         // three outputs: r, g and b

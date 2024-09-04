@@ -12,7 +12,7 @@
 
   Original sketch: https://editor.p5js.org/ml5/sketches/Pix2Pix_callback
   (broken-ish?, needs an earlier version of ml5.js, e.g. 0.6.0)
-  Reference here: https://learn.ml5js.org/#/reference/pix2pix
+  Reference here: https://archive-docs.ml5js.org/#/reference/pix2pix
 */
 
 const SIZE = 256;

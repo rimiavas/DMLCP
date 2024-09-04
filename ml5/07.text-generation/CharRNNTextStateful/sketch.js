@@ -7,7 +7,7 @@
   Modified sketch from the ml5.js library
 
   Original sketch: https://github.com/ml5js/ml5-library/tree/main/examples/p5js/CharRNN/CharRNN_Text_Stateful
-  Reference here: https://learn.ml5js.org/#/reference/charrnn
+  Reference here: https://archive-docs.ml5js.org/#/reference/charrnn
 
   Acknowledgements
   ----------------

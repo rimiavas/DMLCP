@@ -5,8 +5,8 @@
 
   (Deprecated: this is not using ml5js v1!)
   Original sketch: https://editor.p5js.org/ml5/sketches/ObjectDetector_COCOSSD_Video
-  Reference here: https://learn.ml5js.org/#/reference/object-detector
-  And other examples: https://learn.ml5js.org/#/reference/object-detector?id=examples
+  Reference here: https://archive-docs.ml5js.org/#/reference/object-detector
+  And other examples: https://archive-docs.ml5js.org/#/reference/object-detector?id=examples
 */
 
 let video,

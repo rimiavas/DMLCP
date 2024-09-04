@@ -16,7 +16,7 @@
   - Press 't' to train the model
 
   All information to customise your neural network and training can be found here:
-  https://learn.ml5js.org/#/reference/neural-network
+  https://docs.ml5js.org/#/reference/neural-network
 
   IDEA:
   - Can you find patterns where the neural net fails to capture the data?
@@ -68,8 +68,12 @@ function setup() {
   ourColor = color(255,0,0);
 
   // Setup the neural network
-  // For each example, the network has two inputs [x, y] (the mouse position) and three outputs [r, g, b] (the corresponding color)
-  // (Here we use the default config. To add more, look here under 'regression': https://learn.ml5js.org/#/reference/neural-network?id=defining-custom-layers)
+  // For each example, the network has two inputs [x, y] (the mouse position)
+  // and three outputs [r, g, b] (the corresponding color)
+  // Here we use the default config. To add more, look here under 'regression':
+  // https://archive-docs.ml5js.org/#/reference/neural-network?id=defining-custom-layers
+  // The new doc hasn't got as much information:
+  // https://docs.ml5js.org/#/reference/neural-network?id=ml5neuralnetwork
   nn = ml5.neuralNetwork({
     inputs: 2,          // two inputs: x and y
     outputs: 3,         // three outputs: r, g and b
@@ -134,7 +138,7 @@ function keyPressed() {
     // "t" starts training the neural network! (see brain.js)
     case "t":
       // WHERE THE TRAINING HAPPENS: no need to change this
-      // More information here: https://learn.ml5js.org/#/reference/neural-network?id=train
+      // More information here: https://docs.ml5js.org/#/reference/neural-network?id=train-the-model
       nn.normalizeData();    // Normalise our data
       nn.train({
         epochs: 35,          // This controls for how long we train!

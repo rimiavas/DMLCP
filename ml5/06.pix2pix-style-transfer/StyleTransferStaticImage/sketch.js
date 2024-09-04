@@ -8,7 +8,7 @@
   
   Original sketch : https://editor.p5js.org/ml5/sketches/StyleTransfer_Image
   (↑ broken unless you go into the html file and downgrade ml5 to e.g. 0.6.0)
-  Reference here: https://learn.ml5js.org/#/reference/style-transfer
+  Reference here: https://archive-docs.ml5js.org/#/reference/style-transfer
 */
 
 let styleModel,

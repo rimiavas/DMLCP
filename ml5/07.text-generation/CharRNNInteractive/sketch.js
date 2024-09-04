@@ -5,7 +5,7 @@
   Interactive LSTM Text Generation Example using p5.js from ml5.js
 
   Original sketch: https://github.com/ml5js/ml5-library/tree/main/examples/p5js/CharRNN/CharRNN_Interactive
-  Reference here: https://learn.ml5js.org/#/reference/charrnn
+  Reference here: https://archive-docs.ml5js.org/#/reference/charrnn
 */
 
 let charRNN;
