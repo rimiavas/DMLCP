@@ -1,80 +1,97 @@
 /*
-  Data and machine learning for artistic practice (DMLAP)
+  Data and machine learning for creative practice (DMLCP)
 
   Face mesh with a webcam
 
-  Original sketch: https://editor.p5js.org/ml5/sketches/Facemesh_Webcam
-  Reference here: https://learn.ml5js.org/#/reference/facemesh
-  And other examples: https://learn.ml5js.org/#/reference/facemesh?id=examples
+  Reference here: https://docs.ml5js.org/#/reference/facemesh
 */
 
 
-let facemesh,
-    video,
-    predictions = [];
+let video,
+    faceMesh,
+    faces = [],
+    hasLogged = false, // Used to log preds only once
+    options = { maxFaces: 1, refineLandmarks: false, flipped: false };
+    // note that you must set the limit of detectable faces in advance!
+    // landmarks refinement: more precision but slower (more compute!)
+    // to flip, also flip the video below
+
+function preload() {
+  faceMesh = ml5.faceMesh(options);
+}
 
 function setup() {
   createCanvas(640, 480);
-  video = createCapture(VIDEO);
+  video = createCapture(VIDEO); // to flip, add: { flipped: true }
   video.size(width, height);
 
-  facemesh = ml5.facemesh(video, modelReady);
+  // Start detecting faces from the webcam video
+  faceMesh.detectStart(video, gotFaces);
 
-  // Used to log preds only once
-  let hasLogged = false;
-
-  // This sets up an event that fills the global variable "predictions"
+  // This sets up an event that fills the global variable "faces"
   // with an array every time new predictions are made
-  facemesh.on("face", preds => {
-    predictions = preds;
-
-    // Log `preds` to see its contents
-    if (!hasLogged) {
-      console.log("The predictions object:");
-      console.log(preds);
-      console.log("The list of 'annotations' in `predictions[0].annotations` (accessible as a property, and containing an array of points in that part of the face:)");
-      console.log(Object.keys(preds[0].annotations));
-      hasLogged = true;
-    }
-  });
-
   // Hide the video element, and just show the canvas
   video.hide();
-}
-
-function modelReady() {
-  console.log("Model ready!");
 }
 
 function draw() {
   image(video, 0, 0, width, height);
 
-  drawKeypoints(); // We call our function to draw all keypoints
-                   // IDEA: like in previous sketches, there is no obligation to display the video,
-                   //       and you could for instance imagine a blank canvas where a few points
-                   //       from the face are used to draw vanishing circles, using the same logic
-                   //       as when you want a circle to leave a trail behind it when it moves?
+  drawKeypoints();
+
+  // We call our function to draw all keypoints
+  // IDEA: like in previous sketches, there is no obligation to display the
+  //       video, and you could for instance imagine a blank canvas where a few
+  //       points from the face are used to draw vanishing circles, using the
+  //       same logic as when you want a circle to leave a trail behind it when
+  //       it moves?
+
 }
+
+function gotFaces(results) {
+  faces = results;
+
+  // Log `results` to see its contents
+  if (!hasLogged && results.length > 0) {
+    console.log("The predictions object:");
+    console.log(results);
+    hasLogged = true;
+  }
+
+}
+
 
 // A function to draw ellipses over the detected keypoints
 function drawKeypoints() {
-  for (let i = 0; i < predictions.length; i++) {
-    const keypoints = predictions[i].scaledMesh; // IDEA: `scaledMesh` is actually the 'unscaled' (unnormalised version)
-                                                 //       if you try `.mesh` instead, the mesh will be displayed in the upper
-                                                 //       left corner, as the values are restricted to be always in the same
-                                                 //       range! This in turn could be used if you wanted a face mesh that
-                                                 //       moves like the person being filmed, but that stays fixed (instead
-                                                 //       of sticking to the same location in the image). Proprely scaled again,
-                                                 //       this 'static' yet moving face could occupy the whole canvas, like
-                                                 //       a mirror!
 
-    // Draw facial keypoints.
-    for (let j = 0; j < keypoints.length; j++) {
-      const [x, y, z] = keypoints[j]; // the coordinates are given in 3D! Here we only use x & y
+  if (faces.length > 0) {
 
-      fill(0, 255, 0);
-      ellipse(x, y, 5, 5);
+    for (let i = 0; i < faces.length; i++) {
+      const keypoints = faces[i].keypoints;
+
+      // IDEA: in v0, you could get an 'unscaled' mesh (unnormalised version)
+      //       that would then produce a smaller, fixed version of the face
+      //       (e.g. in the upper left corner of the sketch), as the values
+      //       were restricted to be always in the same range. You could still
+      //       achieve that by using the width and the height of the sketch to
+      //       normalise the values of the landmarks yourself! This in turn
+      //       could be used if you wanted a face mesh that moves like the
+      //       person being filmed, but that stays fixed (instead of being
+      //       superimposed to the same location in the image). Proprely scaled
+      //       again, this 'static' yet moving face could occupy the whole
+      //       canvas, like a mirror!
+
+      // Draw facial keypoints.
+      for (let j = 0; j < keypoints.length; j++) {
+        // the coordinates are given in 3D! Here we only use x & y
+        const {x, y, z} = keypoints[j];
+
+        fill(0, 255, 0);
+        ellipse(x, y, 5, 5);
+      }
+
     }
+
   }
 }
 
