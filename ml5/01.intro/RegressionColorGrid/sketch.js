@@ -1,5 +1,5 @@
 /*
-  Data and machine learning for artistic practice (DMLAP)
+  Data and machine learning for creative practice (DMLCP)
   Regression example 2
 
   In this code we create colour markers on the screen, each time saving their

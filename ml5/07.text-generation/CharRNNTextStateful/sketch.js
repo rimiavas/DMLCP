@@ -1,5 +1,5 @@
 /*
-  Data and machine learning for artistic practice (DMLAP)
+  Data and machine learning for creative practice (DMLCP)
   Week 7 Text & Sequences
 
   Stateful LSTM Text Generation Example using p5.js

@@ -1,5 +1,5 @@
 /*
-  Data and machine learning for artistic practice (DMLAP)
+  Data and machine learning for creative practice (DMLCP)
   Week 6 Image-to-Image Translation
 
   Interactive Pix2pix example with p5.js using callback functions

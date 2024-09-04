@@ -1,5 +1,5 @@
 /*
-  Data and machine learning for artistic practice (DMLAP)
+  Data and machine learning for creative practice (DMLCP)
 
   Object detection on a static image
 

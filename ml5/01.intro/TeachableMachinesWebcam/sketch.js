@@ -1,5 +1,5 @@
 /*
-  Data and machine learning for artistic practice (DMLAP)
+  Data and machine learning for creative practice (DMLCP)
 
   Image classifier via models trained with Teachable Machines
   adapted from https://github.com/ml5js/Intro-ML-Arts-IMA-F21

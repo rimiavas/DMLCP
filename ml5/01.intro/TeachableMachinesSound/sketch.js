@@ -1,5 +1,5 @@
 /*
-  Data and machine learning for artistic practice (DMLAP)
+  Data and machine learning for creative practice (DMLCP)
 
   Sound classifier via models trained with Teachable Machines
   from https://github.com/ml5js/Intro-ML-Arts-IMA-F21
