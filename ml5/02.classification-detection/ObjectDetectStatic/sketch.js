@@ -3,6 +3,7 @@
 
   Object detection on a static image
 
+  (Deprecated: this is not using ml5js v1!)
   Original sketch: https://editor.p5js.org/ml5/sketches/ObjectDetector_COCOSSD_single_image
   Reference here: https://learn.ml5js.org/#/reference/object-detector
   And other examples: https://learn.ml5js.org/#/reference/object-detector?id=examples
@@ -14,31 +15,43 @@ let detector,
 
 // Load our model & image before setup
 function preload() {
-  detector = ml5.objectDetector('cocossd'); // Load our object dection model `cocossd` – you could use `yolo`
-  pic = loadImage('images/dog.jpg');        // Load our image, try the other ones in the directory!
-                                            // IDEA: import, or even create, your own images, see what the model is able to recognise
-                                            // IDEA: how about implementing more of an interface to load images dynamically?
-                                            //       This could be, for instance, loading all the images in the `images/` folder,
-                                            //       and allowing the user to switch between images. Or even use an API to pull images
-                                            //       from the Internet?
-                                            // IDEA: how about instantiating *two* networks, `cocossd` and `yolo`, and display both
-                                            //       predictions? Ideally you'd want to make clear to the user which model predicted
-                                            //       which bounding box?
+  // Load our object dection model `cocossd` – you could use `yolo`
+  detector = ml5.objectDetector('cocossd');
+  pic = loadImage('images/dog.jpg');
+
+  // Load our image, try the other ones in the directory!
+  // IDEA: import, or even create, your own images, see what the model is able
+  //       to recognise?
+  // IDEA: how about implementing more of an interface to load images
+  //       dynamically? This could be, for instance, loading all the images in
+  //       the `images/` folder, and allowing the user to switch between
+  //       images. Or even use an API to pull images from the Internet?
+  // IDEA: how about instantiating *two* networks, `cocossd` and `yolo`, and
+  //       display both predictions? Ideally you'd want to make clear to the
+  //       user which model predicted which bounding box?
+
 }
 
 function setup() {
   createCanvas(pic.width, pic.height);
 
-  // IDEA: here, instead of using an existing image, you could *create one* using createGraphics, and see what the network
-  //       recognises as an image or not? Try with just random colours everywhere, for instance, how does the network react?
-  // IDEA: more advanced, you could imagine an interface where by pressing a key some randomness, or various shapes, are
-  //       *added* to an existing image (or even something where the user can draw on the image) – then, the network would
-  //       be requested to classify the new image (you probably need to import the image into a graphics object you can draw
-  //       onto, or extract the canvas itself into an image object, that can be passed to the network). The interesting thing
-  //       is that this would allow people to see how the new patterns gradually degrade the network's performance!
+  // IDEA: here, instead of using an existing image, you could *create one*
+  //       using createGraphics, and see what the network recognises as an
+  //       image or not? Try with just random colours everywhere, for instance,
+  //       how does the network react?
+  // IDEA: more advanced, you could imagine an interface where by pressing a
+  //       key some randomness, or various shapes, are *added* to an existing
+  //       image (or even something where the user can draw on the image) –
+  //       then, the network would be requested to classify the new image (you
+  //       probably need to import the image into a graphics object you can
+  //       draw onto, or extract the canvas itself into an image object, that
+  //       can be passed to the network). The interesting thing is that this
+  //       would allow people to see how the new patterns gradually degrade the
+  //       network's performance!
 
   console.log("Setting up, about to detect...");
-  detector.detect(pic, gotResults); // start our detector, give the callback function of gotResults()
+  // start our detector, give the callback function of gotResults()
+  detector.detect(pic, gotResults);
 }
 
 function draw() {
@@ -51,13 +64,15 @@ function draw() {
   // Loop through all our detections and draw them
   for (let object of detections) {
 
-    // We use lerp to color the border somewhere between red and green based on the confidence of the prediction
+    // We use lerp to color the border somewhere between red and green based on
+    // the confidence of the prediction
     stroke(lerpColor(color(255,0,0), color(0, 255, 0), object.confidence));
     strokeWeight(3);
     noFill();
 
     // Draw rectangle around a detection
     rect(object.x, object.y, object.width, object.height);
+
     // We could also use the normalised values, these represent the percentage
     // across the screen as a value between 0 and 1 – so we multiply these out
     // by the width and height of the canvas:
