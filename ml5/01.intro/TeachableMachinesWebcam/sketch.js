@@ -3,7 +3,10 @@
 
   Image classifier via models trained with Teachable Machines
   adapted from https://github.com/ml5js/Intro-ML-Arts-IMA-F21
+  More rececent course: https://github.com/ml5js/Intro-ML-Arts-IMA-F24
   & Joe McAlister's course
+
+  Reference: https://docs.ml5js.org/#/reference/image-classifier
 */
 
 // Classifier Variable
@@ -16,7 +19,6 @@ const imageModelURL = 'https://teachablemachine.withgoogle.com/models/bXy2kDNi/'
 
 // Video
 let video;
-let flippedVideo;
 
 // To store the classification
 let label = "";
@@ -24,21 +26,23 @@ let confidence = 0.0;
 
 // Load the model first
 function preload() {
-  classifier = ml5.imageClassifier(imageModelURL + 'model.json'); // IDEA: try instantiate *two* models, instead of one? You could train a model associating
-                                                                  // postures with poetic snippets (the class names), and display them on the screen? Note that
-                                                                  // you would need to change the classifyVideo function, which currently uses the classifier
-                                                                  // global variable by default.
+  classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+
+  // IDEA: try instantiate *two* models, instead of one? You could train a model associating                                                                    
+  // postures with poetic snippets (the class names), and display them on the screen? Note that
+  // you would need to change the classifyVideo function, which currently uses the classifier
+  // global variable by default.                                                                                                                                
+                                                                  
 }
 
 function setup() {
   createCanvas(320, 260);
 
   // Create the video
-  video = createCapture(VIDEO);
+  video = createCapture(VIDEO, { flipped: true }); // flip the video when creating it!
   video.size(320, 240);
   video.hide();
 
-  flippedVideo = ml5.flipImage(video)
   // Start classifying
   classifyVideo();
 }
@@ -46,7 +50,7 @@ function setup() {
 function draw() {
   background(0);
   // Draw the video
-  image(flippedVideo, 0, 0);
+  image(video, 0, 0);
 
   // Draw the label
   fill(255);
@@ -60,24 +64,20 @@ function draw() {
 
 // Get a prediction for the current video frame
 function classifyVideo() {
-  flippedVideo = ml5.flipImage(video)
-  classifier.classify(flippedVideo, gotResult);
+  classifier.classifyStart(video, gotResult);
 }
 
 // When we get a result
-function gotResult(error, results) {
-  // If there is an error
-  if (error) {
-    console.error(error);
-    return;
-  }
+function gotResult(results) {
+
   // The results are in an array ordered by confidence.
   // console.log(results[0]);
-  label = results[0].label;           // IDEA: can you modify this sketch to display not just the first
-  confidence = results[0].confidence; // label (results[0]), but all of them? You would need to change
-                                      // the code that displays the label as a text in `draw()`. One way
-                                      // of doing this would be to use `results` as a global!
+  label = results[0].label;           
+  confidence = results[0].confidence; 
 
-  // Classifiy again!
-  classifyVideo();
+  // IDEA: can you modify this sketch to display not just the first
+  // label (results[0]), but all of them? You would need to change
+  // the code that displays the label as a text in `draw()`. One way                                      
+  // of doing this would be to use `results` as a global!                                                 
+
 }
