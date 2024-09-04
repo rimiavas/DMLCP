@@ -3,6 +3,10 @@
 
   Face mesh with a webcam
 
+  Fun experiments with facemesh and particle systems:
+  (still using v0, but that shouldn't matter too much)
+  https://www.youtube.com/live/931bqqpQqvI?si=YRJL9SVDJAbgcdtp&t=7379
+
   Reference here: https://docs.ml5js.org/#/reference/facemesh
 */
 
