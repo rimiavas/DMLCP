@@ -2,17 +2,27 @@
   Data and machine learning for creative practice (DMLCP)
 
   Sound classifier via models trained with Teachable Machines
-  from https://github.com/ml5js/Intro-ML-Arts-IMA-F21
-  & https://editor.p5js.org/ima_ml/sketches/xcdqphiVj
+  originally from https://github.com/ml5js/Intro-ML-Arts-IMA-F21
+  More rececent course: https://github.com/ml5js/Intro-ML-Arts-IMA-F24
+
+  Reference (deprecated): https://archive-docs.ml5js.org/#/reference/sound-classifier
+  Updated to this (works like imageClassifier): https://docs.ml5js.org/#/reference/image-classifier
+  See also this: https://docs.ml5js.org/#/reference/sound-classifier
 
   Note: when I tested it, the Teachable Machines interface didn't
   work so well with Firefox (OK with Chrome).
 */
 
-let classifier;
+let classifier,
+    hasLogged = false, // log only once
+    label = "listening";
+
+let results;
 
 // Label (start by showing listening)
-let label = "listening";
+// IDEA: currently, the sketch will never go back to the original string once
+//       one detection has occurred. Maybe you would want 'listening' to be a
+//       default state the sketch returns to?
 
 // Teachable Machine model URL:
 const soundModelURL = 'https://teachablemachine.withgoogle.com/models/h3p9R41J/'; // hand clap
@@ -39,7 +49,7 @@ function setup() {
   createP(instructions);
   // Start classifying
   // The sound model will continuously listen to the microphone
-  classifier.classify(gotResult);
+  classifier.classifyStart(gotResult);
 }
 
 function draw() {
@@ -53,12 +63,15 @@ function draw() {
 
 
 // The model recognizing a sound will trigger this event
-function gotResult(error, results) {
-  if (error) {
-    console.error(error);
-    return;
-  }
+function gotResult(results) {
+
+  if (!results) return; // avoid error before any detection is made
+
   // The results are in an array ordered by confidence.
-  // console.log(results[0]);
+  if (!hasLogged) {
+    console.log(results);
+    hasLogged = true;
+  }
   label = results[0].label;
+
 }
