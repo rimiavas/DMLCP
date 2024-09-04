@@ -5,6 +5,7 @@
 
   Adapted from Joe McAlister's version
 
+  (Deprecated: this is not using ml5js v1!)
   Original sketch: https://editor.p5js.org/ml5/sketches/FaceApi_Video_Landmarks
   Reference here: https://learn.ml5js.org/#/reference/face-api
   And other examples: https://learn.ml5js.org/#/reference/face-api?id=examples
@@ -13,7 +14,8 @@
 let faceapi,
     video,
     detections,
-    hasLogged = false; // to inspect our object just once, see below
+    hasLogged = false;
+    // to inspect our object just once, see below
 
 // These are our options for detecting faces, provided by ml5.js
 const detection_options = {
@@ -22,11 +24,15 @@ const detection_options = {
 }
 
 function setup() {
-  createCanvas(600, 338);                    // I use these to downsize a 720p stream, but you can adjust for your webcam if it skews it.
+  createCanvas(600, 338);
+  // I use these to downsize a 720p stream, but you can adjust for your webcam
+  // if it skews it.
 
-  video = createCapture(VIDEO, webcamReady); // Ask for webcam access – with the `webcamReady` callback for when we have access
-  video.size(width, height);                 // Set size to be equal to canvas
-  video.hide();                              // Hide DOM element
+  // Ask for webcam access – with the `webcamReady` callback for when we have
+  // access
+  video = createCapture(VIDEO, webcamReady);
+  video.size(width, height); // Set size to be equal to canvas
+  video.hide();              // Hide DOM element
 }
 
 function webcamReady(stream) {
@@ -41,17 +47,21 @@ function draw() {
   image(video, 0,0, width, height)
 
   // If we have detections, draw them on the image
+  // When we call detect, we are looking for potentially multiple faces, so
+  // ml5.js returns an array of objects, therefore here we use a for loop to
+  // get each 'person'. Note the for...of loop:
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
   if (detections) {
-    for (let person of detections) { // When we call detect, we are looking for potentially multiple faces, so
-      drawBox(person);               // ml5.js returns an array of objects, therefore here we use a for loop to
-      drawLandmarks(person);         // get each 'person'. Note the for...of loop:
-    }                                // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+    for (let person of detections) {
+      drawBox(person);
+      drawLandmarks(person);
+    }
   }
 
-  // IDEA: like in previous sketches, there is no obligation to display the video,
-  //       and you could for instance imagine a blank canvas where points from the
-  //       face, or the box itself, can be used in artistic ways! To draw or
-  //       influence shapes on the canvas in real time!
+  // IDEA: like in previous sketches, there is no obligation to display the
+  //       video, and you could for instance imagine a blank canvas where
+  //       points from the face, or the box itself, can be used in artistic
+  //       ways! To draw or influence shapes on the canvas in real time!
 
 }
 
@@ -59,27 +69,35 @@ function draw() {
 function modelReady() {
   console.log("Model is ready...");
 
-  faceapi.detect(gotResults); // Ask ml5 to detect a faces in the video stream previously
-                              // provided, then call the `gotResults` callback
+  faceapi.detect(gotResults);
+
+  // Ask ml5 to detect a faces in the video stream previously provided, then
+  // call the `gotResults` callback
+                              
 }
 
 // ml5.js has determined if there's a face
 function gotResults(err, result) {
 
-  if (err) {                  // Check if ml5.js returned an error – if so print to console and stop
+  // Check if ml5.js returned an error – if so print to console and stop
+  if (err) {
     console.log(err)
     return
   }
 
-  detections = result;        // If it gets here we are okay, so store results in the detections variable.
+  // If it gets here we are okay, so store results in the detections variable.
+  detections = result;
 
-  if (!hasLogged && detections.length > 0) {           // Only log once!
+  // Only log once!
+  if (!hasLogged && detections.length > 0) {
+    // This is an object – have a look at it in the console!
     console.log("The predictions object:");
-    console.log(result);      // This is an object – have a look at it in the console!
+    console.log(result);
     hasLogged = true;
   }
 
-  faceapi.detect(gotResults); // Recursion! <3 We call face detect again
+  // Recursion! <3 We call face detect again
+  faceapi.detect(gotResults);
 }
 
 
