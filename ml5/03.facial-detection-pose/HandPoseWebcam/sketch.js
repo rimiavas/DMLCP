@@ -4,8 +4,8 @@
   Handpose webcam demo
 
   Originally from here: https://editor.p5js.org/ml5/sketches/Handpose_Webcam
-  Reference here: https://learn.ml5js.org/#/reference/handpose
-  And other examples: https://learn.ml5js.org/#/reference/handpose?id=examples
+  Reference here: https://docs.ml5js.org/#/reference/handpose
+  And other examples: https://docs.ml5js.org/#/reference/handpose?id=examples
 */
 
 let video,
