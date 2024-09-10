@@ -1,5 +1,5 @@
 /*
-  Data and machine learning for creative practice (DMLAP)
+  Data and machine learning for creative practice (DMLCP)
 
   Body Pose with PoseNet
 
