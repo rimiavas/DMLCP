@@ -1,24 +1,25 @@
 /*
-  Data and machine learning for creative practice (DMLAP)
+  Data and machine learning for creative practice (DMLCP)
 
   Handpose webcam demo
 
-  Originally from here: https://editor.p5js.org/ml5/sketches/Handpose_Webcam
+  Originally from here (deprecated): https://editor.p5js.org/ml5/sketches/Handpose_Webcam
   Reference here: https://docs.ml5js.org/#/reference/handpose
   And other examples: https://docs.ml5js.org/#/reference/handpose?id=examples
 */
 
 let video,
     handPose,
-    hand; // NOTE: as per the documentation, this model can only detect
-          //       one hand: https://github.com/tensorflow/tfjs-models/tree/master/handpose#mediapipe-handpose
-          //       see this reply: https://github.com/ml5js/ml5-library/pull/1117#issuecomment-791100940
+    hands = [];
+
+function preload() {
+  handPose = ml5.handPose();
+}
 
 function setup() {
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.hide();
-  handpose = ml5.handpose(video, modelReady);
 }
 
 function draw() {
@@ -27,6 +28,9 @@ function draw() {
   if (video) {
     image(video, 0, 0);
   }
+
+  // Start detecting hands from the webcam video
+  handPose.detectStart(video, gotHands);
 
   // IDEA: like in previous sketches, there is no obligation to display the video,
   //       and you could for instance imagine a blank canvas where points from the
@@ -40,8 +44,9 @@ function draw() {
   drawHand();
 }
 
-function modelReady() {
-  handpose.on('predict', gotPose);
+function gotHands(results) {
+    // Save the output to the hands variable
+  hands = results;
 }
 
 // This time, using a click to display the hand object
@@ -49,25 +54,27 @@ function mousePressed() {
   console.log(hand);
 }
 
-function gotPose(results) {
-  // do something with the results
-  hand = results;
-};
-
 function drawHand() {
   push(); // Precaution: styles remain within this function
   noStroke();
   fill(255,0,0); // Set colour of circle
 
   // if we have any hand detected, draw it
-  if (hand && hand.length > 0) {
+  if (hands.length > 0) {
 
-    let landmarks = hand[0].landmarks;
+    // Draw all the tracked hand points
+    for (let i = 0; i < hands.length; i++) {
+      let hand = hands[i];
 
-    for (let i = 0; i < landmarks.length; i++) {
-      let [x, y, z] = landmarks[i];
-      ellipse(x, y, 7);
+      for (let j = 0; j < hand.keypoints.length; j++) {
+        let keypoint = hand.keypoints[j];
+        fill(0);
+        stroke(0, 255, 0);
+        circle(keypoint.x, keypoint.y, 5);
+      }
+
     }
+
   }
 
   pop();
@@ -77,14 +84,3 @@ function drawHand() {
 //       the geometry of the hands, would be to draw lines between the landmarks, to
 //       create a silhouette of a hand, as seen here for instance:
 //       https://github.com/tensorflow/tfjs-models/tree/master/handpose#mediapipe-handpose
-// IDEA: (advanced) the current ml5 model, adapted from tfjs, does not support more
-//       than one hand. There is a more recent model that does that, which is part of
-//       mediapipe (a bit of a successor to the tfjs creative projects?), see here:
-//       https://developers.google.com/mediapipe/solutions/vision/hand_landmarker
-//       People have already worked on adapting this to p5, and the next version of ml5
-//       is likely to include these new developments. See for instance this tutorial:
-//       https://www.youtube.com/watch?v=BX8ibqq0MJU, with the code here:
-//       https://github.com/Creativeguru97/YouTube_tutorial/tree/master/Play_with_APIs/hand_detection/mediapipe_hands/final
-//       ! Beware! You need to fix one thing to make the above code work: in
-//       `detections.js`, pass one more option to `hands.setOptions`: `modelComplexity: 1,`!
-//       (Cf. this issue: https://githut.com/google/mediapipe/issues/2181#issuecomment-863447853)
