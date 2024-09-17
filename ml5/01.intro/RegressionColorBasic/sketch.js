@@ -37,6 +37,10 @@ let nn,
 function setup() {
   createCanvas(500, 500);
 
+  // For this example to work across all browsers
+  // "webgl" or "cpu" needs to be set as the backend
+  ml5.setBackend("webgl");
+
   // set our background once at the start
   background(0);
 
