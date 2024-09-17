@@ -45,7 +45,7 @@ function setup() {
   background(0);
 
   // our first colour can be red;
-  ourColor = color(255,0,0);
+  ourColor = color(255,10,10);
 
   // note in this demo we just clear the canvas at the beginning
   fill(255);
@@ -105,12 +105,16 @@ function mousePressed() {
 
 function keyPressed() {
   // IDEA: play with more colours?
+  // NOTE: as I'm writing this, training will fail if one of the three inputs
+  //       (rgb) is zero for all training samples, which happens if the user
+  //       does not provide examples for all classes. Quick fix is never to
+  //       use 0 in the colour, but always give a small value.
   if (key == "1") {
-    ourColor = color(255,0,0);
+    ourColor = color(255,10,10);
   } else if (key == "2") {
-    ourColor = color(0,255,0);
+    ourColor = color(10,255,10);
   } else if (key == "3") {
-    ourColor = color(0,0,255);
+    ourColor = color(10,10,255);
   } else if (key == "t") {
     // WHERE THE TRAINING HAPPENS: no need to change this
     // More information here: https://learn.ml5js.org/#/reference/neural-network?id=train

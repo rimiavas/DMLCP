@@ -69,7 +69,7 @@ function setup() {
   // set our background once at the start
   background(255);
 
-  ourColor = color(255,0,0);
+  ourColor = color(255,10,10);
 
   // Setup the neural network
   // For each example, the network has two inputs [x, y] (the mouse position)
@@ -129,15 +129,19 @@ function mousePressed() {
 function keyPressed() {
   // Switch is equivalent to a series of if-else statements
   switch (key) {
-    // 1, 2, 3 select colors              // IDEA: add more colors?
+    // IDEA: add more colours?
+    // NOTE: as I'm writing this, training will fail if one of the three inputs
+    //       (rgb) is zero for all training samples, which happens if the user
+    //       does not provide examples for all classes. Quick fix is never to
+    //       use 0 in the colour, but always give a small value.
     case "1":
-      ourColor = color(255,0,0);
+      ourColor = color(255,10,10);
       break; // Important to call break after each "case" otherwise execution will continue to the next
     case "2":
-      ourColor = color(0,255,0);
+      ourColor = color(10,255,10);
       break;
     case "3":
-      ourColor = color(0,0,255);
+      ourColor = color(10,10,255);
       break;
     // "t" starts training the neural network! (see brain.js)
     case "t":
