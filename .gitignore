@@ -4,6 +4,7 @@
 # Python folders
 python/models
 python/datasets
+python/generated
 python/scraped-images
 
 # python venv folders
