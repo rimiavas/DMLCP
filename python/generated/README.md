@@ -1,2 +1,2 @@
-# Model folders 
-This directory will contain the saved models trained with the code in the parent directory
+# Generated folders 
+This directory will contain the data generated with the code in the parent directory
