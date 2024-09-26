@@ -1,5 +1,7 @@
 # Installation & technical matters
 
+Here are some [slides on Python Installation & environments](https://docs.google.com/presentation/d/1aTYSvpuYaE_dPIWwT_HEcYve7fsYpDtzix74d5-NvC4/edit?usp=sharing).
+
 ## 1. Python
 
 **Note**: 
@@ -11,13 +13,14 @@ Instructions to follow for:
 
 The overall [download](https://www.python.org/downloads/) page.
 
-## Miniconda/Anaconda/Miniforge
+## Miniconda/Anaconda/Miniforge/Mamba
 
 For managing Python environment (and more), use conda! Works on Linux/MacOS/Windows.
 
-- [Miniconda](https://docs.conda.io/en/latest/miniconda.html), the minimal install
-- [Miniforge](https://github.com/conda-forge/miniforge), the minimal install **for M1/M2 Mac owners**
-- [Anaconda](https://www.anaconda.com/), the full install (recommended if you want to explore more tools)
+- [Miniforge](https://github.com/conda-forge/miniforge), recommended for Mac M1/2/3 users (this currently includes `mamba`, just below).
+- [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html), a C++ reimplementation of `conda`, the package manager of Anaconda. Still in development, but resolves issues of speed found in Anaconda.
+- [Miniconda](https://docs.conda.io/en/latest/miniconda.html), the minimal install, CLI only, for Anaconda below
+- [Anaconda](https://www.anaconda.com/), the full install (only recommended if you use it elsewhere or are only comfortable with GUI software)
 
 Installation instructions in the above links.
 
@@ -45,42 +48,42 @@ conda config --set auto_activate_base false
 
 A [conda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html) is a directory that contains a specific collection of conda packages that you have installed. This allows you to work cleanly on your different projects that may require different versions of libraries or Python itself. You can easily activate or deactivate environments, which is how you switch between them. 
 
-### **NOTE: when using conda, it is *strongly* recommended never to use the `base` environment, the one coming out of the box with conda, and that conda needs to update itself. Just leave it as is and always work in an environment _you_ created.**
+**NOTE: when using `conda`, it is *strongly* recommended never to use the `base` environment, the one coming out of the box with `conda`, and that `conda` needs to update itself (installing things in this environment runs the risk of slowing down any update you want to make to `conda` itself). Just leave it as is and always work in an environment _you_ created.**
 
 ### Creating the environment
 
 Open a terminal/console and type (`--name` and `-n` are equivalent, you can list flags with `conda --help`): 
 
 ```bash
-$ conda create --name dmlap python=3.9
+$ conda create --name dmlcp python
 ```
 
-This will specifies the Python version (3.9) (we could have left this out, but for TensorFlow we're better off with it) and its name 'dmlap' ('Data and Machine Learning for Artistic Practice'). Feel free to choose some other name if you prefer. 
+This will specifies the Python version and its name 'dmlcp' ('Data and Machine Learning for Creative Practice'). Feel free to choose some other name if you prefer. 
 
 Activate it by typing:
 
 ```bash
-$ conda activate dmlap
+$ conda activate dmlcp
 ```
 
 Now your console *should* indicate the environment in some way or other. We can install a package (the `-c conda-forge` specifies a *channel*, again a way of controlling dependencies: a bit like getting your version of the program from one supermarket). You can add the `-y` flag if you don't want conda to wait for your approval.
 
 ```bash
-(dmlap) $ conda install -c conda-forge jupyter
+(dmlcp) $ conda install -c conda-forge jupyter
 ```
 
-The package is now installed **only** in your environment `dmlap`. From now on, make sure you always activate this environment when working on the lab/project activities of this module!
+The package is now installed **only** in your environment `dmlcp`. From now on, make sure you always activate this environment when working on the lab/project activities of this module!
 
 ### Checking what packages are installed in your environment
 
 ```bash
-(dmlap)  $ conda list
+(dmlcp)  $ conda list
 ```
 
 Search for something in particular, using Unix pipes:
 
 ```bash
-$ conda list | grep tensor # tensorflow, tensorflow-estimator, tensorboard, etc.
+$ conda list | grep torch # pytorch, torchvision, etc.
 ```
 
 ### Removing a package from your environment
@@ -123,13 +126,13 @@ Pip is Python's package manager (like `npm` for JavaScript)
 To create an environment *only for a specific project*:
 ```bash
 $ cd my-project # go to that folder
-$ mkdir .env # create a (usually hidden) folder for the env files
-$ python3 -m venv .env --prompt my-project # creates your pip environment
-$ source ./env/bin/activate                # without --prompt, my environment will be called '.env'
+$ mkdir env # create a (usually hidden) folder for the env files
+$ python3 -m venv env --prompt my-project # creates your pip environment
+$ source env/bin/activate                 # without --prompt, my environment will be called 'env'
 (my-project) $ which pip  # pip will now be in my-project/bin/pip, a local copy
 ```
 
-Everything relating to this environment is contained in the `.env` folder.
+Everything relating to this environment is contained in the `env` folder.
 
 To deactivate:
 ```bash
@@ -138,7 +141,7 @@ To deactivate:
 
 To delete all traces of your environment, start from zero, etc.
 ```bash
-rm -rf .env # inside `my-project``, simply delete the folder with env files
+rm -rf env # inside `my-project``, simply delete the folder with env files
 ```
 
 ### **!! NOTE: When you run python3 -m venv, it will create an environment with the same version of Python as the one used when invoking the command! To use another version, you need to have it installed, then use python3.11 -m venv...**
@@ -175,8 +178,11 @@ The [Jupyter Notebook/Lab](https://jupyter.org) is a web interface around [IPyth
 ### Jupyter Notebooks / Lab
 
 Use the terminal/console and type:
-- `conda activate dmlap` (or the name of your environment)
-- `jupyter notebook` or `jupyter lab`
+
+```bash
+$ conda activate dmlcp # or the name of your env
+$ (dmlcp) jupyter lab
+```
 
 Then use the file explorer that opens in the browser to locate your notebook (explained below).
 
@@ -193,6 +199,7 @@ Three ways:
 It is as simple as that. You don't need to install anything to use Google Colab. When you start working with it, you will notice that it is quite useful to connect it to your Google Drive to allow it to read and write files instead of re-uploading your data every time you start a new colab session.
 
 In Python, this is how you do it (in a code cell):
+
 ```python
 from google.colab import drive
 drive.mount('/content/drive/')
@@ -202,63 +209,19 @@ drive.mount('/content/drive/')
 
 ## 4. ML Software
 
-### Tensorflow/Keras
+### PyTorch
 
-TensorFlow has been notoriously annoying to install.
+Select the correct set-up [here](https://pytorch.org/get-started/locally/) and use the appropriate installation command.
 
-It is always good to check the latest [instructions on their website](https://www.tensorflow.org/install/pip), but these days it can be as simple as activating an environment and typing `pip install tensorflow`.
+#### Installing PyTorch on Mac M1/M2
 
-#### Installing Tensorflow on Mac M1/M2
-
-If you are working on a Mac M1/M2 (nice!), **Anaconda/Miniconda will not work, you will need to use Miniforge instead!**
+If you are working on a Mac M1/2/3 (nice!), **Anaconda/Miniconda will not work, you will need to use Miniforge instead!**
 
 If you need to uninstall Anaconda/Miniconda, use [these instructions](https://docs.anaconda.com/anaconda/install/uninstall/).
 
+[Here](https://developer.apple.com/metal/pytorch/) are installations for PyTorch and Silicon acceleration.
 
-```bash
-xcode-select --install # Mac dev things
-```
-
-```bash
-chmod +x Miniforge3-MacOSX-arm64.sh # make script executable
-./Miniforge3-MacOSX-arm64.sh        # install Miniforge
-```
-
-Create an environment with Python 3.9 and activate it:
-
-```bash
-# conda create -n dmlap python=3.9 # if you need to create it
-conda activate dmlap
-```
-
-Inside it, install:
-```bash
-(dmlap) $ conda install -c apple tensorflow-deps
-(dmlap) $ pip install tensorflow-macos
-(dmlap) $ pip install tensorflow-metal
-```
-
-See [here](https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706) for a test example after the install.
-
-### PyTorch (+ Huggingface/Gradio)
-
-### **!! NOTE: more often than not, because of updates, and the low-level CUDA libraries, having both TF and PyTorch in the same environment break things! For simplicity, start a new environment for this** 
-
-For the part of the course where we look at the Huggingface library, which has TF and JAX APIs, but was first conceived with PyTorch in mind, I advise creating a new environment (which works nicely for Gradio as well!). By creating the environment and specifying PyTorch directly and the channel, you can avoid some errors later due to, among other things, the Python version used (as well as using just `pip` on MacOS inside the environment, which shouldn't create difficulties and for some reason does):
-
-```bash
-conda create -n dmlap.hug python pytorch::pytorch torchvision torchaudio -c pytorch # create env + get pytorch
-conda activate dmlap.hug
-which pip # should give you a location within your anaconda/miniconda/minitorch folder
-```
-
-Note that in my experience installing PyTorch is usually super straightforward, far easier than TensorFlow. Normally you can use the appropriate option on [this page](https://pytorch.org/get-started/locally/).
-
-Then, you could install things with conda or pip:
-
-```bash
-conda install jupyter matplotlib # and other things as you need
-```
+### Huggingface/Gradio
 
 Huggingface [recommends pip for their installation](https://huggingface.co/docs/transformers/installation)
 
@@ -275,17 +238,17 @@ pip install gradio
 
 ## 5. Other dependencies
 
-Here are instructions to install the other required dependencies for the DMLAP course. This assumes you followed the Python and Conda setup instructions and installed Tensorflow by following the instructions above. Repeating these steps if all or some of the dependencies are already satisfied should cause no problem.
+Here are instructions to install the other required dependencies for the DMLCP course. This assumes you followed the Python and Conda setup instructions and installed PyTorch by following the instructions above. Repeating these steps if all or some of the dependencies are already satisfied should cause no problem.
 
-I personally recommend installing conda (or pip) packages one by one rather than in a bulk, as in my experience conda often hangs or takes *ages* to resolve the environment (longer than if you install things one by one).
+Conda is known for having speed issues, and against that there are two possibilities:
+- use pip inside your conda environment: pip does not check dependencies, but it's fine, since you can just delete the environment and rebuild one if things go wrong.
+- use something like `mamba`, that is much faster.
 
-Other rule of thumb: try conda first (almost everything is available through the `conda-forge` channel, a Google search will tell you that), then pip. However, if you knwo what you will be using your environment for (only one specific project/task), then creating the env, with pip inside it, and using pip, can be quicker.
+Now first make sure your environment is active `conda activate dmlcp`, then you can use `conda install -c conda-forge` to install the following packages:
 
-Now first make sure your environment is active `conda activate dmlap`, then you can use `conda install -c conda-forge` to install the following packages:
-
-- essentials (`numpy` comes with TensorFlow)
+- essentials
 ```bash
-    jupyter matplotlib pillow
+    jupyter numpy matplotlib pillow
 ```
 - required by canvas:
 ```bash
@@ -311,7 +274,6 @@ pip install pyglet
 ```bash
     imageio
 ```
-```
 
 #### Note! That you may not need all of them. One good habit to gain is not to freak out when seeing an error saying a package isn't present, and install it when you need it.
 
@@ -334,15 +296,15 @@ A great way to get the code everytime the repository is updated is to use the Gi
 
 ### The GitHub App
 
-Get the app [here](https://desktop.github.com/), and sign in using your GitHub credentials, and follow [these steps](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop) for `https://github.com/jchwenger/DMLAP`.
+Get the app [here](https://desktop.github.com/), and sign in using your GitHub credentials, and follow [these steps](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop) for `https://github.com/jchwenger/DMLCP`.
 
 Getting updates in the App, click `Pull origin`.
 
 ### The Terminal:
 
 ```bash
-$ git clone https://github.com/jchwenger/DMLAP
-$ cd DMLAP # voilà
+$ git clone https://github.com/jchwenger/DMLCP
+$ cd DMLCP # voilà
 $ git:(main) # if you have oh my zsh, the branch will appear on the left in some form
 ```
 
