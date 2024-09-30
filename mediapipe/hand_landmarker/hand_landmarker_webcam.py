@@ -11,8 +11,8 @@ from mediapipe.tasks.python import vision
 
 # Constants
 MARGIN = 10  # pixels
-FONT_SIZE = 1
-FONT_THICKNESS = 1
+FONT_SIZE = 2
+FONT_THICKNESS = 2
 HANDEDNESS_TEXT_COLOR = (88, 205, 54)  # vibrant green
 
 # Path to the model file
@@ -42,6 +42,9 @@ def draw_landmarks_on_image(rgb_image, detection_result):
     for idx in range(len(hand_landmarks_list)):
         hand_landmarks = hand_landmarks_list[idx]
         handedness = handedness_list[idx]
+        corrected_handedness = (
+            "Right" if handedness[0].category_name == "Left" else "Left"
+        )
 
         # Draw hand landmarks
         hand_landmarks_proto = landmark_pb2.NormalizedLandmarkList()
@@ -71,7 +74,7 @@ def draw_landmarks_on_image(rgb_image, detection_result):
         # Draw handedness (left or right hand) on the image
         cv2.putText(
             annotated_image,
-            f"{handedness[0].category_name}",
+            f"{corrected_handedness}",
             (text_x, text_y),
             cv2.FONT_HERSHEY_DUPLEX,
             FONT_SIZE,
