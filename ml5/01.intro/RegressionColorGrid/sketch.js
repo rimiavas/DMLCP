@@ -131,14 +131,14 @@ function keyPressed() {
   switch (key) {
     // IDEA: add more colours?
     // NOTE: as I'm writing this, training will fail if one of the three inputs
-    //       (rgb) is zero for all training samples, which happens if the user
-    //       does not provide examples for all classes. Quick fix is never to
-    //       use 0 in the colour, but always give a small value.
+    //       has the same value in every data point (e.g. 10 data points, and
+    //       '10' for the R value in each). Therefore, I use '2', '5', and '10'
+    //       as arbitrary different values.
     case "1":
-      ourColor = color(255,10,10);
+      ourColor = color(255,2,2);
       break; // Important to call break after each "case" otherwise execution will continue to the next
     case "2":
-      ourColor = color(10,255,10);
+      ourColor = color(5,255,5);
       break;
     case "3":
       ourColor = color(10,10,255);

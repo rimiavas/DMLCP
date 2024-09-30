@@ -59,7 +59,7 @@ function setup() {
   // https://archive-docs.ml5js.org/#/reference/neural-network?id=defining-custom-layers)
   nn = ml5.neuralNetwork({
     inputs: 2,          // two inputs: x and y
-    outputs: 3,         // three outputs: r, g and b
+    outputs: 2,         // three outputs: r, g and b
     task: 'regression', // because we predict the three numbers directly (r/g/b values)
     debug: true         // this opens the training pane
   });
@@ -106,13 +106,13 @@ function mousePressed() {
 function keyPressed() {
   // IDEA: play with more colours?
   // NOTE: as I'm writing this, training will fail if one of the three inputs
-  //       (rgb) is zero for all training samples, which happens if the user
-  //       does not provide examples for all classes. Quick fix is never to
-  //       use 0 in the colour, but always give a small value.
+  //       has the same value in every data point (e.g. 10 data points, and
+  //       '10' for the R value in each). Therefore, I use '2', '5', and '10'
+  //       as arbitrary different values.
   if (key == "1") {
-    ourColor = color(255,10,10);
+    ourColor = color(255,2,2);
   } else if (key == "2") {
-    ourColor = color(10,255,10);
+    ourColor = color(5,255,5);
   } else if (key == "3") {
     ourColor = color(10,10,255);
   } else if (key == "t") {
