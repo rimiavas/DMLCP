@@ -32,6 +32,7 @@
 */
 
 let nn,
+    ourColor,
     mode = "training";
 
 function setup() {
@@ -45,7 +46,7 @@ function setup() {
   background(0);
 
   // our first colour can be red;
-  ourColor = color(255,10,10);
+  ourColor = color(255,1,1);
 
   // note in this demo we just clear the canvas at the beginning
   fill(255);
@@ -59,9 +60,15 @@ function setup() {
   // https://archive-docs.ml5js.org/#/reference/neural-network?id=defining-custom-layers)
   nn = ml5.neuralNetwork({
     inputs: 2,          // two inputs: x and y
-    outputs: 2,         // three outputs: r, g and b
+    outputs: 3,         // three outputs: r, g and b
     task: 'regression', // because we predict the three numbers directly (r/g/b values)
-    debug: true         // this opens the training pane
+    debug: true,        // this opens the training pane
+    // this is the default settings, see: https://github.com/ml5js/ml5-next-gen/blob/9aff062c6b2f999d7d5e98cc03619eb3695e3826/src/NeuralNetwork/index.js#L700
+    // (you can add more 'dense' layers with more/less units!)
+    // layers: [           
+    //   { type: 'dense', units: 16, activation: 'relu', }, // try activation: 'tanh'
+    //   { type: 'dense', activation: 'sigmoid', } // this outputs numbers between 0 and 1
+    // ]
   });
 
 }
@@ -100,6 +107,7 @@ function mousePressed() {
 
     // this adds the data to the neural network
     nn.addData(inputs, outputs);
+    // console.log(ourColor, inputs, outputs);
   }
 }
 
@@ -107,14 +115,14 @@ function keyPressed() {
   // IDEA: play with more colours?
   // NOTE: as I'm writing this, training will fail if one of the three inputs
   //       has the same value in every data point (e.g. 10 data points, and
-  //       '10' for the R value in each). Therefore, I use '2', '5', and '10'
-  //       as arbitrary different values.
+  //       only ever '10' for the R value in each). Therefore, I use '1', '2',
+  //       and '3' as arbitrary different values.
   if (key == "1") {
-    ourColor = color(255,2,2);
+    ourColor = color(255,1,1); // red
   } else if (key == "2") {
-    ourColor = color(5,255,5);
+    ourColor = color(2,255,2); // green
   } else if (key == "3") {
-    ourColor = color(10,10,255);
+    ourColor = color(3,3,255); // blue
   } else if (key == "t") {
     // WHERE THE TRAINING HAPPENS: no need to change this
     // More information here: https://learn.ml5js.org/#/reference/neural-network?id=train

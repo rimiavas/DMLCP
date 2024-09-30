@@ -4,7 +4,7 @@
 
   In this code we create colour markers on the screen, each time saving their
   coordinates and r,g,b values and providing them to our neural network.
-  e.g. nnAddData(inputs, output); in mousePressed();
+  e.g. nn.addData(inputs, output); in mousePressed();
 
   Once we have enough points we call nnTrain(); this trains the neural network
 
@@ -52,6 +52,7 @@
 */
 
 let nn,
+    ourColor;
     mode = "training";
 
 let data_points = [];
@@ -82,7 +83,13 @@ function setup() {
     inputs: 2,          // two inputs: x and y
     outputs: 3,         // three outputs: r, g and b
     task: 'regression', // because we predict the three numbers directly (r/g/b values)
-    debug: true         // this opens the training pane
+    debug: true,        // this opens the training pane
+    // this is the default settings, see: https://github.com/ml5js/ml5-next-gen/blob/9aff062c6b2f999d7d5e98cc03619eb3695e3826/src/NeuralNetwork/index.js#L700
+    // (you can add more 'dense' layers with more/less units!)
+    // layers: [           
+    //   { type: 'dense', units: 16, activation: 'relu', }, // try activation: 'tanh'
+    //   { type: 'dense', activation: 'sigmoid', } // this outputs numbers between 0 and 1
+    // ]
   });
 }
 
@@ -123,6 +130,7 @@ function mousePressed() {
     data_points.push({x: mouseX, y: mouseY,
                       r: red(ourColor), g: green(ourColor), b: blue(ourColor)});
     nn.addData(inputs, outputs);
+    // console.log(ourColor, inputs, outputs);
   }
 }
 
@@ -132,16 +140,16 @@ function keyPressed() {
     // IDEA: add more colours?
     // NOTE: as I'm writing this, training will fail if one of the three inputs
     //       has the same value in every data point (e.g. 10 data points, and
-    //       '10' for the R value in each). Therefore, I use '2', '5', and '10'
-    //       as arbitrary different values.
+    //       only ever '10' for the R value in each). Therefore, I use '1', '2',
+    //       and '3' as arbitrary different values.
     case "1":
-      ourColor = color(255,2,2);
+      ourColor = color(255,1,1);
       break; // Important to call break after each "case" otherwise execution will continue to the next
     case "2":
-      ourColor = color(5,255,5);
+      ourColor = color(2,255,2);
       break;
     case "3":
-      ourColor = color(10,10,255);
+      ourColor = color(3,3,255);
       break;
     // "t" starts training the neural network! (see brain.js)
     case "t":
