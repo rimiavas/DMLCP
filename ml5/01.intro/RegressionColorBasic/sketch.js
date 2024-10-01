@@ -13,7 +13,7 @@
 
   Instructions:
   - Click to place a point,
-  - Press 1 to 3 to chane the colour of the points
+  - Press 1 to 3 to change the colour of the points
   - Press 't' to train the model
 
   IDEA: An experiment that could help you gain some practice with this NN system
