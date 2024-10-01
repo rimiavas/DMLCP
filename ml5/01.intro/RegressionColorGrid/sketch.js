@@ -86,6 +86,7 @@ function setup() {
     debug: true,        // this opens the training pane
     // this is the default settings, see: https://github.com/ml5js/ml5-next-gen/blob/9aff062c6b2f999d7d5e98cc03619eb3695e3826/src/NeuralNetwork/index.js#L700
     // (you can add more 'dense' layers with more/less units!)
+    // (all choices of activations can be found here: https://github.com/tensorflow/tfjs/blob/master/tfjs-layers/src/activations.ts)
     // layers: [           
     //   { type: 'dense', units: 16, activation: 'relu', }, // try activation: 'tanh'
     //   { type: 'dense', activation: 'sigmoid', } // this outputs numbers between 0 and 1
